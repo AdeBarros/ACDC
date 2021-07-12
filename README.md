@@ -9,6 +9,8 @@ XAMPP :
 Télécharger : https://www.apachefriends.org/fr/index.html  
 Utilisation : Lancer XAMPP Control Panel, activer Apache (pour le PHP) et MySql (pour la BDD)  
 
+Code-ci : Extraire l'archive ACDC dans le répertoire C:\xampp\htdocs
+
 Base de Données :  
 Accès : http://localhost/phpmyadmin/server_import.php
 Importer : acdc.sql (présent dans ce dossier)
