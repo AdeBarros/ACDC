@@ -54,14 +54,14 @@ def datavis():
     
     # definition de la fonction de position de la Force
     def forcPos(long, agent):
-        if(agent == '1'):
+        if(agent == '2'):
             return long - 0.5
         else:
             return 8.5 - long
         
     # definition de la fonction de retournement de l'image
     def imgFlip(agini, long, difagini):
-        if (agini == "1" and difagini == "0") or (agini == "2" and difagini == "1"):
+        if (agini == "2" and difagini == "0") or (agini == "1" and difagini == "1"):
             if long % 2 == 1:
                 return "flip"
             else:
@@ -155,7 +155,7 @@ def datavis():
         istring = str(i)
         ech_dict = dict_x_new[istring]
         
-        if ech_dict["agini"] == "1":
+        if ech_dict["agini"] == "2":
             ydeci = int(ech_dict["long"]) + 0.33
         else:
             ydeci = 7.66 - int(ech_dict["long"])
@@ -212,10 +212,10 @@ def datavis():
             # cas de la coupure
             if int_dict["type"] == "coupure":
                 # on donne sa position
-                if ech_dict["agini"] == "1":
+                if ech_dict["agini"] == "2":
                     yinter = int(int_dict["temp"])
                 else:
-                    yinter = 9 - int(int_dict["temp"])
+                    yinter = 8 - int(int_dict["temp"])
                 
                 # Ajout de la coupure
                 fig.add_layout_image(
@@ -237,7 +237,7 @@ def datavis():
             # cas des interactions
             else:      
                 # on donne sa position
-                if ech_dict["agini"] == "1":
+                if ech_dict["agini"] == "2":
                     yinter = int(int_dict["temp"]) - 0.5
                 else:
                     yinter = 8.5 - int(int_dict["temp"])   
