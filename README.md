@@ -1,6 +1,6 @@
 # ACDC
 
-Prototype d'interface numérisée pour la retranscription ACDC
+Prototype d'interface numérisée pour la retranscription ACDC  
 Taille (sans packages) : 3.53MB
 
 ## Installation :
@@ -26,18 +26,18 @@ invite de commande python (pip)
 &nbsp;&nbsp; pip install flask  
 
 ### Code-ci : 
-Extraire l'archive ACDC dans le répertoire C:\xampp\htdocs
+Extraire l'archive ACDC dans le répertoire C:\xampp\htdocs 
 
 ### Base de Données :  
-Accès : http://localhost/phpmyadmin/server_import.php
-Créer : une base de données "acdc" (en minuscules)
-Importer : acdc.sql (présent dans ce dossier)
+Accès : http://localhost/phpmyadmin/server_import.php  
+Créer : une base de données "acdc" (en minuscules)  
+Importer : acdc.sql (présent dans ce dossier)  
 
 ## Lancement :
 
 ### Flask :  
-Lancer son invite de commande python / bash (pip) 
-Se placer dans le dossier courant  (C:\xampp\htdocs\JS sur windows)
+Lancer son invite de commande python / bash (pip)  
+Se placer dans le dossier courant  (C:\xampp\htdocs\JS sur windows)  
 Lancer les lignes suivantes (en fonction de l'invite en question):  
  &nbsp;&nbsp; Bash :  
       &nbsp;&nbsp;&nbsp;&nbsp;  export FLASK_APP=dataviz  
@@ -49,5 +49,5 @@ Lancer les lignes suivantes (en fonction de l'invite en question):
       &nbsp;&nbsp;&nbsp;&nbsp;  $env:FLASK_APP = "dataviz"  
       &nbsp;&nbsp;&nbsp;&nbsp;  flask run  
 
-### Ouverture :
+### Ouverture : 
 Ouvrir le fichier "main.php" dans un navigateur
