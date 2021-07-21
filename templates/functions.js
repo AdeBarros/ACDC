@@ -1,11 +1,6 @@
     // Ol' reliable
     var i = 0;
 
-    // Récupération des données de la BDD à chaque lancement de la page
-    window.onload = function() {
-        getEchData();
-    }
-
     // Activation des Tooltips
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();   
