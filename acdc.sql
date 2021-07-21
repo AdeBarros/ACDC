@@ -25,6 +25,22 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- User: `acdcuser`
+--
+
+# uninstall if anything's already there
+GRANT ALL PRIVILEGES ON *.* TO 'acdcuser'@'%';
+DROP USER 'acdcuser'@'%';
+DROP DATABASE IF EXISTS `acdc`;
+
+# create the user
+CREATE USER 'acdcuser'@'%' IDENTIFIED BY 'acdc2021';
+CREATE DATABASE IF NOT EXISTS `acdc`;
+GRANT ALL PRIVILEGES ON `tablename` . * TO 'acdcuser'@'%';
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `echange`
 --
 
