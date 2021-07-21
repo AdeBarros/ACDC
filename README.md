@@ -34,8 +34,9 @@ git clone https://github.com/AdeBarros/ACDC.git
 
 ### Base de Données :  
 Accès : http://localhost/phpmyadmin/server_import.php  
-Créer : une base de données "acdc" (en minuscules)  
 Importer : acdc.sql (présent dans ce dossier)  
+ou  
+Copier-coller son contenu dans l'onglet "SQL" : http://localhost/phpmyadmin/server_sql.php  
 
 ### Utilisation :  
 #### Flask :  
