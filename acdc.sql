@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 --
 
 # uninstall if anything's already there
+CREATE USER IF NOT EXISTS 'acdcuser'@'%' IDENTIFIED BY 'acdc2021';
 GRANT ALL PRIVILEGES ON *.* TO 'acdcuser'@'%';
 DROP USER 'acdcuser'@'%';
 DROP DATABASE IF EXISTS `acdc`;
@@ -37,6 +38,8 @@ DROP DATABASE IF EXISTS `acdc`;
 CREATE USER 'acdcuser'@'%' IDENTIFIED BY 'acdc2021';
 CREATE DATABASE IF NOT EXISTS `acdc`;
 GRANT ALL PRIVILEGES ON `tablename` . * TO 'acdcuser'@'%';
+
+USE acdc;
 
 -- --------------------------------------------------------
 
