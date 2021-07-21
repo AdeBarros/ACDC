@@ -166,6 +166,6 @@
 
     // Retour à l'interface
     echo '<script src="function.js">  datavisRefresh() </script>';
-    header('Location: /JS/templates/main.php'); // Retour à l'interface
+    header('Location: ' . dirname($_SERVER["SCRIPT_NAME"]).'/main.php'); // Retour à l'interface
     exit();
 ?>
