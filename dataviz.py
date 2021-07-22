@@ -165,29 +165,30 @@ def datavis():
         sec = int(sptemp[1])
         temp = minutes + sec/60
         
-        # Ajout de la Décision
-        fig.add_layout_image(
-            dict(
-                source="http://localhost/JS/templates/Images/{}{}.png".format(ech_dict["deci"], imgFlip(ech_dict["agini"],0,0)),
-                xref="x",
-                yref="y",
-                xanchor='center',
-                yanchor='middle',
-                x=temp,
-                y=ydeci,
-                sizex=0.7,
-                sizey=0.7,
-                sizing="contain",
-                opacity=1,
-                layer="above"
+        if(ech_dict["deci"]):
+            # Ajout de la Décision
+            fig.add_layout_image(
+                dict(
+                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(ech_dict["deci"], imgFlip(ech_dict["agini"],0,0)),
+                    xref="x",
+                    yref="y",
+                    xanchor='center',
+                    yanchor='middle',
+                    x=temp,
+                    y=ydeci,
+                    sizex=0.7,
+                    sizey=0.7,
+                    sizing="contain",
+                    opacity=1,
+                    layer="above"
+                    )
                 )
-            )
         
         # Ajout de la Force
         for l in range(int(ech_dict["long"])+1):
             fig.add_layout_image(
             dict(
-                source="http://localhost/JS/templates/Images/{}.png".format(ech_dict["force"]),
+                source="http://localhost/ACDC/templates/Images/{}.png".format(ech_dict["force"]),
                 xref="x",
                 yref="y",
                 xanchor='center',
@@ -220,7 +221,7 @@ def datavis():
                 # Ajout de la coupure
                 fig.add_layout_image(
                 dict(
-                    source="http://localhost/JS/templates/Images/{}.png".format("coupure"),
+                    source="http://localhost/ACDC/templates/Images/{}.png".format("coupure"),
                     xref="x",
                     yref="y",
                     xanchor='center',
@@ -245,7 +246,7 @@ def datavis():
                 # Ajout d'une interaction
                 fig.add_layout_image(
                 dict(
-                    source="http://localhost/JS/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
                     xref="x",
                     yref="y",
                     xanchor='center',
