@@ -3,11 +3,11 @@ Prototype d'interface numérisée pour la retranscription ACDC
 
 ## Installation Windows / MacOS :
 ### XAMPP :
-Télécharger : https://www.apachefriends.org/fr/index.html
+Télécharger : https://www.apachefriends.org/fr/index.html  
 Utilisation : Lancer XAMPP Control Panel, activer Apache (pour le PHP) et MySql (pour la BDD)
 ### Python :
-Téléchager Python 3 (latest version) : https://www.python.org/downloads/
-Installer pip : https://pypi.org/project/pip/
+Téléchager Python 3 (latest version) : https://www.python.org/downloads/  
+Installer pip : https://pypi.org/project/pip/  
 (optionnel) : Installer Anaconda Navigator - https://docs.anaconda.com/anaconda/navigator/install/
 #### Plotly :
 Installer : https://plotly.com/python/getting-started/#installation
@@ -31,7 +31,7 @@ git clone https://github.com/AdeBarros/ACDC.git
 ```
 
 ### Base de Données :
-Accès : http://localhost/phpmyadmin/server_import.php
+Accès : http://localhost/phpmyadmin/server_import.php  
 Importer : acdc.sql (présent dans ce dossier)
 ou
 Copier-coller son contenu dans l'onglet "SQL" : http://localhost/phpmyadmin/server_sql.php
