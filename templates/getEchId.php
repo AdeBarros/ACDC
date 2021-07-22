@@ -18,7 +18,7 @@
     # Si il y a des donées
     if ($result->num_rows > 0) {
       // Ecriture d'une case pour ajouter un nouvel échange
-      echo "<div id='EchSavesPlus' class='echsaves' type='button' onclick='location.reload()' value=><label for='EchSavesPlus' data-toggle='tooltip' data-placement='bottom' title='Ajouter un échange' ><img class='plus' id='plus' src='Images/plus.PNG' /></label>";
+      echo "<div id='EchSavesPlus' class='echsaves' type='button' onclick='location.reload()' value=><label for='EchSavesPlus' data-toggle='tooltip' data-placement='bottom' title='Ajouter un échange' ><img class='plus' id='plus' src='Images/plus.png' /></label>";
       while($row = $result->fetch_assoc()) {
 
         # Récupération des échanges

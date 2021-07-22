@@ -46,32 +46,32 @@
                         <br/>
                         <div id="StringDiv" class="string">
                             <input type="checkbox" id="ordre" name="ordre" class="button" onclick="uncheckForce(this)" />
-                            <label for="ordre" data-toggle="tooltip" data-placement="bottom" title="Ordre : affirmation à l'indicatif, injonction ou commande authoritaire, très confiante" ><img src="Images/ordre.PNG" /></label>
+                            <label for="ordre" data-toggle="tooltip" data-placement="bottom" title="Ordre : affirmation à l'indicatif, injonction ou commande authoritaire, très confiante" ><img src="Images/ordre.png" /></label>
                             <input type="checkbox" id="instruction" name='instruction' class="button" onclick="uncheckForce(this)" />
-                            <label for="instruction"  data-toggle="tooltip" data-placement="bottom" title="Instruction : affirmation ou indication au conditionnel ou à l'indicatif, neutre ou plutôt confiante, sans être autoritaire" ><img src="Images/instruction.PNG" /></label>
+                            <label for="instruction"  data-toggle="tooltip" data-placement="bottom" title="Instruction : affirmation ou indication au conditionnel ou à l'indicatif, neutre ou plutôt confiante, sans être autoritaire" ><img src="Images/instruction.png" /></label>
                             <input type="checkbox" id="proposition" name="proposition" class="button" onclick="uncheckForce(this)" />
-                            <label for="proposition"  data-toggle="tooltip" data-placement="bottom" title="Proposition : affirmation au conditionnel, émission d'une idée moyennement confiante ou peu assurée" ><img src="Images/proposition.PNG" /></label>
+                            <label for="proposition"  data-toggle="tooltip" data-placement="bottom" title="Proposition : affirmation au conditionnel, émission d'une idée moyennement confiante ou peu assurée" ><img src="Images/proposition.png" /></label>
                             <input type="checkbox" id="nonverbal" name="nonverbal" class="button" onclick="uncheckForce(this)" />
-                            <label for="nonverbal" data-toggle="tooltip" data-placement="bottom" title="Non-Verbal : action non verbalisée, constatée par la réponse de l'autre participant" ><img src="Images/nonverbal.PNG" /></label>
+                            <label for="nonverbal" data-toggle="tooltip" data-placement="bottom" title="Non-Verbal : action non verbalisée, constatée par la réponse de l'autre participant" ><img src="Images/nonverbal.png" /></label>
                             <input type="checkbox" id="soliloque" name="soliloque" class="button" onclick="uncheckForce(this)" />
-                            <label for="soliloque" data-toggle="tooltip" data-placement="bottom" title="Soliloque : tout type de syntaxe n'incluant pas l'autre participant, donne une directive pour soi, énonce ce qu'il va faire" ><img src="Images/soliloque.PNG" /></label>
+                            <label for="soliloque" data-toggle="tooltip" data-placement="bottom" title="Soliloque : tout type de syntaxe n'incluant pas l'autre participant, donne une directive pour soi, énonce ce qu'il va faire" ><img src="Images/soliloque.png" /></label>
                             <input type="checkbox" id="commentaire" name="commentaire" class="button" onclick="uncheckForce(this)" />
-                            <label for="commentaire"  data-toggle="tooltip" data-placement="bottom" title="Commentaire : tout type de syntaxe non directive ni réponse, commentaire sur le jeu ou un sujet annexe" ><img src="Images/commentaire.PNG" /></label>
+                            <label for="commentaire"  data-toggle="tooltip" data-placement="bottom" title="Commentaire : tout type de syntaxe non directive ni réponse, commentaire sur le jeu ou un sujet annexe" ><img src="Images/commentaire.png" /></label>
                         </div>
                         <hr/>
                         <div id="DecisionDiv" class="decision">
                             <input type="checkbox" id="acceptation" name="acceptation" class="button" onclick="uncheckDecision(this)" />
-                            <label for="acceptation" data-toggle="tooltip" data-placement="bottom" title="Acceptation : ne s'oppose pas à l'idée de l'autre participant" ><img src="Images/acceptation.PNG" /></label>
+                            <label for="acceptation" data-toggle="tooltip" data-placement="bottom" title="Acceptation : ne s'oppose pas à l'idée de l'autre participant" ><img src="Images/acceptation.png" /></label>
                             <input type="checkbox" id="accord" name="accord" class="button" onclick="uncheckDecision(this)" />
-                            <label for="accord" data-toggle="tooltip" data-placement="bottom" title="Accord : est du même avis que l'autre participant" ><img src="Images/accord.PNG"/></label>
+                            <label for="accord" data-toggle="tooltip" data-placement="bottom" title="Accord : est du même avis que l'autre participant" ><img src="Images/accord.png"/></label>
                             <input type="checkbox" id="autorisation" name="autorisation" class="button" onclick="uncheckDecision(this)" />
-                            <label for="autorisation" data-toggle="tooltip" data-placement="bottom" title="Autorisation : accepte une proposition d'action de l'autre (très dépendant du contexte)" ><img src="Images/autorisation.PNG"/></label>
+                            <label for="autorisation" data-toggle="tooltip" data-placement="bottom" title="Autorisation : accepte une proposition d'action de l'autre (très dépendant du contexte)" ><img src="Images/autorisation.png"/></label>
                             <input type="checkbox" id="refus" name="refus" class="button" onclick="uncheckDecision(this)" />
-                            <label for="refus" data-toggle="tooltip" data-placement="bottom" title="Refus : Verbalise son désaccord ou fait immédiatement une contre-proposition" ><img src="Images/refus.PNG"/></label>
+                            <label for="refus" data-toggle="tooltip" data-placement="bottom" title="Refus : Verbalise son désaccord ou fait immédiatement une contre-proposition" ><img src="Images/refus.png"/></label>
                             <input type="checkbox" id="concession" name="concession" class="button" onclick="uncheckDecision(this)" />
-                            <label for="concession" data-toggle="tooltip" data-placement="bottom" title="Concession : n'est pas d'accord mais accepte tout de même d'effectuer l'action" ><img src="Images/concession.PNG"/></label>
+                            <label for="concession" data-toggle="tooltip" data-placement="bottom" title="Concession : n'est pas d'accord mais accepte tout de même d'effectuer l'action" ><img src="Images/concession.png"/></label>
                             <input type="checkbox" id="indetermine" name="indetermine" class="button" onclick="uncheckDecision(this)" />
-                            <label for="indetermine" data-toggle="tooltip" data-placement="bottom" title="Indéterminée : réponse machinale/automatique, inaudible ou trop difficile à interpréter" ><img src="Images/indetermine.PNG"/></label>                    
+                            <label for="indetermine" data-toggle="tooltip" data-placement="bottom" title="Indéterminée : réponse machinale/automatique, inaudible ou trop difficile à interpréter" ><img src="Images/indetermine.png"/></label>                    
                         </div>
 
                     </div>
@@ -94,23 +94,23 @@
                     </div>
                     <div id="InterDiv" class="inter">
                         <input type="checkbox" id="questionnecheck" class="button" />
-                        <label for="questionne" data-toggle="tooltip" data-placement="bottom" title="Questionne : question/affirmation sucitant la participation de l'autre participant ou son avis" ><img id="questionne" src="Images/questionne.PNG" draggable="true" ondragstart="drag(event)" /></label>
+                        <label for="questionne" data-toggle="tooltip" data-placement="bottom" title="Questionne : question/affirmation sucitant la participation de l'autre participant ou son avis" ><img id="questionne" src="Images/questionne.png" draggable="true" ondragstart="drag(event)" /></label>
                         <input type="checkbox" id="informecheck" class="button" />
-                        <label for="informe" data-toggle="tooltip" data-placement="bottom" title="Informe : explique une directive ou un choix, expose une stratégie ou anticipe la suite" ><img id="informe" src="Images/informe.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="informe" data-toggle="tooltip" data-placement="bottom" title="Informe : explique une directive ou un choix, expose une stratégie ou anticipe la suite" ><img id="informe" src="Images/informe.png" draggable="true" ondragstart="drag(event)"/></label>
                         <input type="checkbox" id="controlecheck" class="button" />
-                        <label for="controle" data-toggle="tooltip" data-placement="bottom" title="Contrôle : surveille l'action de l'autre, demande des justifications à l'action, cherche à comprendre ce que fait l'autre" ><img id="controle" src="Images/controle.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="controle" data-toggle="tooltip" data-placement="bottom" title="Contrôle : surveille l'action de l'autre, demande des justifications à l'action, cherche à comprendre ce que fait l'autre" ><img id="controle" src="Images/controle.png" draggable="true" ondragstart="drag(event)"/></label>
                         <br/>
                         <input type="checkbox" id="positifcheck" class="button" />
-                        <label for="positif" data-toggle="tooltip" data-placement="bottom" title="Positif : compliment ou remarque positive sur le jeu ou une action" ><img id="positif" src="Images/positif.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="positif" data-toggle="tooltip" data-placement="bottom" title="Positif : compliment ou remarque positive sur le jeu ou une action" ><img id="positif" src="Images/positif.png" draggable="true" ondragstart="drag(event)"/></label>
                         <input type="checkbox" id="negatifcheck" class="button" />
-                        <label for="negatif" data-toggle="tooltip" data-placement="bottom" title="Négatif : critique ou remarque négative sur le jeu ou une action" ><img id="negatif" src="Images/negatif.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="negatif" data-toggle="tooltip" data-placement="bottom" title="Négatif : critique ou remarque négative sur le jeu ou une action" ><img id="negatif" src="Images/negatif.png" draggable="true" ondragstart="drag(event)"/></label>
                         <input type="checkbox" id="positif2check" class="button" />
-                        <label for="positif2" data-toggle="tooltip" data-placement="bottom" title="Positif+ : compliment, remarque positive ou de satisfaction à son partenaire" ><img id="positif2" src="Images/positif2.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="positif2" data-toggle="tooltip" data-placement="bottom" title="Positif+ : compliment, remarque positive ou de satisfaction à son partenaire" ><img id="positif2" src="Images/positif2.png" draggable="true" ondragstart="drag(event)"/></label>
                         <input type="checkbox" id="negatif2check" class="button" />
-                        <label for="negatif2" data-toggle="tooltip" data-placement="bottom" title="Négatif- : critique ou remarque négative envers son partenaire ou une action de celui-ci" ><img id="negatif2" src="Images/negatif2.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="negatif2" data-toggle="tooltip" data-placement="bottom" title="Négatif- : critique ou remarque négative envers son partenaire ou une action de celui-ci" ><img id="negatif2" src="Images/negatif2.png" draggable="true" ondragstart="drag(event)"/></label>
                         <br/>
                         <input type="checkbox" id="coupurecheck" class="button" />
-                        <label for="coupurecheck" data-toggle="tooltip" data-placement="bottom" title="Coupure : un participant coupe la parole à un autre (à placer dans l'échange avant que la parole soit coupée)" ><img id="coupure" src="Images/coupure.PNG" draggable="true" ondragstart="drag(event)"/></label>
+                        <label for="coupurecheck" data-toggle="tooltip" data-placement="bottom" title="Coupure : un participant coupe la parole à un autre (à placer dans l'échange avant que la parole soit coupée)" ><img id="coupure" src="Images/coupure.png" draggable="true" ondragstart="drag(event)"/></label>
                     </div>
 
                 </form>

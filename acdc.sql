@@ -28,15 +28,21 @@ SET time_zone = "+00:00";
 -- User: `acdcuser`
 --
 
-# uninstall if anything's already there
+-- we need a user before granting him privileges
+CREATE USER IF NOT EXISTS 'acdcuser'@'%' IDENTIFIED BY 'acdc2021';
 GRANT ALL PRIVILEGES ON *.* TO 'acdcuser'@'%';
+-- uninstall if anything's already there
 DROP USER 'acdcuser'@'%';
 DROP DATABASE IF EXISTS `acdc`;
 
-# create the user
+-- Start with a blank slate
+-- create the user
 CREATE USER 'acdcuser'@'%' IDENTIFIED BY 'acdc2021';
 CREATE DATABASE IF NOT EXISTS `acdc`;
-GRANT ALL PRIVILEGES ON `tablename` . * TO 'acdcuser'@'%';
+GRANT ALL PRIVILEGES ON *.* TO 'acdcuser'@'%';
+FLUSH PRIVILEGES;
+ 
+USE acdc;
 
 -- --------------------------------------------------------
 
