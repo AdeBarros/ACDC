@@ -38,7 +38,7 @@ Copier-coller son contenu dans l'onglet "SQL" : http://localhost/phpmyadmin/serv
 ### Utilisation :
 #### Flask :
 Lancer son invite de commande python / bash (pip)
-Se placer dans le dossier courant (C:\xampp\htdocs\JS sur windows)
+Se placer dans le dossier courant (C:\xampp\htdocs\ACDC sur windows)
 Lancer les lignes suivantes (en fonction de l'invite en question):
 &nbsp;&nbsp; Bash :
 ```bash
@@ -53,7 +53,7 @@ flask run
 &nbsp;&nbsp; PowerShell :
 ```powershell
 $env:FLASK_APP = "dataviz"
-lask run
+flask run
 ```
 
 #### Consulter :
