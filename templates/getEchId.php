@@ -9,8 +9,12 @@
     }
 
     // Message SQL de récupération des données des échanges associées à leurs interactions
-    $sql = "SELECT * FROM echange LEFT JOIN interaction ON echange.id_ech = interaction.id_ech ORDER BY temp_ech ;";
+    $sql = "SELECT * FROM matrice 
+    LEFT JOIN echange ON matrice.id_mat = echange.id_mat
+    LEFT JOIN interaction ON echange.id_ech = interaction.id_ech 
+    WHERE matrice.id_mat = " . $_SESSION["matrice_id"] . " ORDER BY temp_ech ;";
     $result = $mysqli->query($sql);
+
 
     $i = -1;
     $j = 0;
@@ -22,7 +26,7 @@
       while($row = $result->fetch_assoc()) {
 
         # Récupération des échanges
-        if($row['id_ech'] != $i){
+        if($row['id_ech'] != $i and $row['id_ech'] != null){
             $i = $row['id_ech'];
             // Ecriture d'une case pour chaque échange
             echo "</div><div type='button' class='echsaves' id='EchSaves" . $i . "' tem='" . $row['temp_ech'] . "' agini = '" . $row['agent_init'] . "' dini = '" . $row['diff_init'] . "' long='" . $row['long'] . "' forc='" . $row['force_ech'] . "' deci='" . $row['decision'] . "' onclick='importDataEch(this)'>" . $row["temp_ech"];

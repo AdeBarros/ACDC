@@ -55,6 +55,16 @@
     $p2 = !empty($_POST['participant2']) ? $_POST['participant2'] : null;
     $di = !empty($_POST['diffini']) ? $_POST['diffini'] : null;
 
+
+    // Sélection de la matrice
+    if(!empty($_SESSION["matrice_id"])){
+        $matrice = $_SESSION["matrice_id"];
+    }
+    else{
+        alert("Pas de matrice sélectionnée !");
+        header('Location: ' . dirname($_SERVER["SCRIPT_NAME"]).'/main.php'); // Retour à l'interface
+    }
+
     // Sélection de la force
 
     if($ordre == true){ $force = 'ordre' ;}
@@ -89,7 +99,7 @@
 */  
 
     // CAS UPDATE
-    $sql = "SELECT id_ech FROM `echange` WHERE temp_ech = '". $timestamp ."' AND agent_init = ". $initiateur;
+    $sql = "SELECT id_ech FROM `echange` WHERE id_mat = '". $matrice ."' temp_ech = '". $timestamp ."' AND agent_init = ". $initiateur;
     $result0 = $link->query($sql);
     // Si l'échange existe déjà, on le supprime avant de le ré-ajouter
     if($result0->num_rows > 0){
