@@ -83,6 +83,9 @@
                 ?>
 
             </select>
+            <a>Lier un fichier audio à cette matrice :</a>
+            <input type="file" accept=".mp3"></input>
+            <br/>
             <button type="submit">Ouvrir</button>
         </form>
     </div>
@@ -92,6 +95,9 @@
             <h4>Créer une nouvelle matrice :</h4>
             <label for="newmatrix">Nom de la nouvelle Matrice :</label>
             <input placeholder="Nouvelle Matrice" id="newMatrix" name="newmatrix" required/> 
+            <a>Importer un fichier audio :</a>
+            <input type="file" accept=".mp3"></input>
+            <br/>
             <button type="submit">Créer</button>
 
         </form>
@@ -101,7 +107,10 @@
         <form action="matrix.php" method="POST" enctype="multipart/form-data">
             <h4>Importer une matrice :</h4>
             <label for="importedmatrix">Nouvelle Matrice :</label>
-            <input type=file name="importedmatrix" id="importedmatrix" required/>
+            <input type=file accept=".sql" name="importedmatrix" id="importedmatrix" required/>
+            <a>Importer un fichier audio :</a>
+            <input type="file" accept=".mp3"></input>
+            <br/>
             <button type=submit>Importer</button> 
 
         </form>

@@ -26,6 +26,5 @@ else{
 ?>
 
         <input class="close" type="button" onclick="document.location.href='matrix.php'" value="x"/>
-        <p id='jstest'></p>
 
 </div> 
