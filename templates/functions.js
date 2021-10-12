@@ -307,7 +307,7 @@
         var echData = {};
         var interData = {};
         const dataset = document.getElementById("LeftDiv");
-        const numEch = dataset.childElementCount - 1;
+        const numEch = dataset.childElementCount - 2;
         var echange = null;
         var numInter = null;
         var interaction = null;
@@ -318,8 +318,8 @@
         var stringJ = "0";
 
         while(i < numEch){
-            echange = dataset.children[i+1];
-            numInter = echange.childElementCount;
+            echange = dataset.children[i+2];
+            numInter = echange.childElementCount - 1;
             j = 0;
             echData = {};
             echData["temp"] = echange.getAttribute("tem");
@@ -330,7 +330,7 @@
             echData["dini"] = echange.getAttribute("dini");
 
             while(j < numInter){
-                interaction = echange.children[j];
+                interaction = echange.children[j + 1];
                 interData = {}
                 interData["temp"] = interaction.getAttribute("tem");
                 interData["type"] = interaction.getAttribute("typ");
@@ -355,6 +355,7 @@
 
         fetch("http://127.0.0.1:5000/postmethod", sentData)
             .then(() => location.reload());
+        
     }
 
 

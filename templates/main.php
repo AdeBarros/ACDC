@@ -9,7 +9,10 @@
 </head>
 <body>
 <div id="MainDiv" class="main">
-    <?php include "toolbar.php"?>   
+    
+    <?php 
+        include "toolbar.php";
+    ?>   
 
     <div id="CoreDiv" class="core">  
 
@@ -22,7 +25,7 @@
             <div id="TopDiv" class="top">
 
                 <form action="db.php" method="post" onsubmit="insertPrevis();">
-
+                    <input type="hidden" name="matrice_id" value="<?php echo $_SESSION["matrice_id"];  ?>"/>
                     <div id="ForceDiv" class="force">
                         <div id="MiscDiv" class="misc">
                             <div id="LabelMisc" class="lab">
@@ -151,11 +154,14 @@
                     <?php include "../newdatavis.html"; ?>
                 </div>
                 <div id="SaveDiv2" class="save">
-                    <button class="sav" type="submit" onclick="testPrevis();">Save</button>
-                    <br/>
-                    <button class="cancel" type="reset">Cancel</button>
-                    <br/>
-                    <button style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
+                    <form action="exportcsv.php" method="POST">
+                        <input type="hidden" name="id" value="<?php echo $_SESSION["matrice_id"] ?>"/>
+                        <button class="sav" type="submit" onclick="testPrevis();">Save</button>
+                        <br/>
+                        <button class="cancel" type="reset">Cancel</button>
+                        <br/>
+                        <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
+                    </form>
                 </div>
             </div>
 

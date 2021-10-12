@@ -33,14 +33,17 @@
 
         //Cas d'une matrice importée
         if(!empty($_FILES["importedmatrix"])){
-            echo "<script>alert('" . $_FILES["importedmatrix"]["tmp_name"] . "')</script>";
-            $sql = file_get_contents($_FILES["importedmatrix"]["tmp_name"]);
 
-            if ($link->query($sql) === TRUE) {
-                echo "New record created successfully";
-              } else {
-                echo "Error: " . $sql . "<br>" . $link->error;
-              }
+            //Cas du SQL
+            if($_FILES["importedmastrix"]["type"] == "sql"){
+                $sql = file_get_contents($_FILES["importedmatrix"]["tmp_name"]);
+    
+                if ($link->query($sql) === TRUE) {
+                    echo "New record created successfully";
+                  } else {
+                    echo "Error: " . $sql . "<br>" . $link->error;
+                  }
+            }
         }
         
 

@@ -5,10 +5,31 @@
 
 .close{
     background-color: red;
-    width: 1.7%;
+    width: 4ch;
     height: 3vh;
-    position: absolute;
     -ms-flex-align: end;
+}
+
+.echplusboxes{
+    float:right;
+    top: -20px;
+}
+
+.delete{
+    background-color: red;
+    width: 3ch;
+    height: 2vh;
+    top: 0px;
+    float:right;
+    text-align-last: center;
+}
+
+.modify{
+    background-color: orange;
+    width: 3ch;
+    height: 2vh;
+    float:right;
+    text-align-last: center;
 }
 
 img{

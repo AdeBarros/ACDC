@@ -57,11 +57,10 @@
 
 
     // Sélection de la matrice
-    if(!empty($_SESSION["matrice_id"])){
-        $matrice = $_SESSION["matrice_id"];
+    if(!empty($_POST["matrice_id"])){
+        $matrice = $_POST["matrice_id"];
     }
     else{
-        alert("Pas de matrice sélectionnée !");
         header('Location: ' . dirname($_SERVER["SCRIPT_NAME"]).'/main.php'); // Retour à l'interface
     }
 
@@ -100,6 +99,7 @@
 
     // CAS UPDATE
     $sql = "SELECT id_ech FROM `echange` WHERE id_mat = '". $matrice ."' temp_ech = '". $timestamp ."' AND agent_init = ". $initiateur;
+    echo $sql;
     $result0 = $link->query($sql);
     // Si l'échange existe déjà, on le supprime avant de le ré-ajouter
     if($result0->num_rows > 0){
@@ -114,14 +114,14 @@
         }
         $sql = "DELETE FROM `interaction` WHERE id_ech = ". $iddelete;
         if(mysqli_query($link, $sql)){
-            echo "Records added successfully.";
+            echo "Records removed successfully.";
         } else{
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
         }
     }
 
     // Insertion de l'échange
-    $sql = "INSERT INTO `echange` (`id_ech`, `temp_ech`, `agent_init`, `diff_init`, `long`, `force_ech`, `decision`) VALUES (0, '$timestamp', $initiateur, $diffini, $longueur, '$force', '$decision')";
+    $sql = "INSERT INTO `echange` (`id_ech`, `id_mat`,`temp_ech`, `agent_init`, `diff_init`, `long`, `force_ech`, `decision`) VALUES (0, $matrice, '$timestamp', $initiateur, $diffini, $longueur, '$force', '$decision')";
     if(mysqli_query($link, $sql)){
         echo "Records added successfully.";
     } else{
@@ -175,7 +175,7 @@
     mysqli_close($link);
 
     // Retour à l'interface
-    echo '<script src="function.js">  datavisRefresh() </script>';
+    echo '<script src="function.js">  datavisRefresh(); </script>';
     header('Location: ' . dirname($_SERVER["SCRIPT_NAME"]).'/main.php'); // Retour à l'interface
     exit();
 ?>
