@@ -330,7 +330,7 @@
             echData["dini"] = echange.getAttribute("dini");
 
             while(j < numInter){
-                interaction = echange.children[j + 1];
+                interaction = echange.children[j];
                 interData = {}
                 interData["temp"] = interaction.getAttribute("tem");
                 interData["type"] = interaction.getAttribute("typ");

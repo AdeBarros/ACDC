@@ -17,9 +17,6 @@
         form.submit();
 
       }
-      else{
-        alert("Modification annulée");
-      }
     }
     
   </script>
