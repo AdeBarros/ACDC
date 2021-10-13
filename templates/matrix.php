@@ -31,10 +31,10 @@
               }
         }
 
-        //Cas d'une matrice importée
+        // Cas d'une matrice importée
         if(!empty($_FILES["importedmatrix"])){
 
-            //Cas du SQL
+            // Cas du SQL
             if($_FILES["importedmastrix"]["type"] == "sql"){
                 $sql = file_get_contents($_FILES["importedmatrix"]["tmp_name"]);
     
@@ -44,6 +44,8 @@
                     echo "Error: " . $sql . "<br>" . $link->error;
                   }
             }
+
+            // TODO : Autres cas
         }
         
 
@@ -55,7 +57,7 @@
         <h1>Bienvenue sur l'outil de Retranscription ACDC</h1>
         <h4>Afin de continuer, veuillez sélectionner une matrice sur laquelle vous voulez travailler :</h4>
         
-        <form action="main.php" method="post">  
+        <form action="main.php" method="post" enctype="multipart/form-data">  
             <label for="matrice">Matrice :</label>
             <select name="matrix" id="matrice" required>
                 <option value="">Veuillez Choisir une matrice</option>
@@ -83,8 +85,11 @@
                 ?>
 
             </select>
-            <a>Lier un fichier audio à cette matrice :</a>
-            <input type="file" accept=".mp3"></input>
+            <br/>
+            <br/>
+            <label for="newaudio">Importer un fichier Audio (optionnel) :</label>
+            <input id="newaudio" name="newaudio" type="file" accept=".mp3"/>
+            <br/>
             <br/>
             <button type="submit">Ouvrir</button>
         </form>
@@ -95,8 +100,7 @@
             <h4>Créer une nouvelle matrice :</h4>
             <label for="newmatrix">Nom de la nouvelle Matrice :</label>
             <input placeholder="Nouvelle Matrice" id="newMatrix" name="newmatrix" required/> 
-            <a>Importer un fichier audio :</a>
-            <input type="file" accept=".mp3"></input>
+            <br/>
             <br/>
             <button type="submit">Créer</button>
 
@@ -108,8 +112,7 @@
             <h4>Importer une matrice :</h4>
             <label for="importedmatrix">Nouvelle Matrice :</label>
             <input type=file accept=".sql" name="importedmatrix" id="importedmatrix" required/>
-            <a>Importer un fichier audio :</a>
-            <input type="file" accept=".mp3"></input>
+            <br/>
             <br/>
             <button type=submit>Importer</button> 
 

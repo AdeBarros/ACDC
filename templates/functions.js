@@ -358,6 +358,22 @@
         
     }
 
+    function copyTimeStamp(){
+        var audio = document.getElementById("playingaudio");
+        var time = audio.currentTime;
+        var min = Math.floor(time/60);
+        var sec = Math.floor(time % 60);
+        var strMin = min.toString();
+        var strSec = sec.toString();
+        if(min < 10){
+            strMin = "0" + strMin;
+        }
+        if(sec < 10){
+            strSec = "0" + strSec;
+        }
+        document.getElementById("timestamp").setAttribute("value", strMin + ":" + strSec);
+    }
+
 
     /*
     function dump(obj) {

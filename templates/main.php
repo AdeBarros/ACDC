@@ -152,16 +152,20 @@
             <div id="BottomDiv" class="bottom">
                 <div id="VisDiv" class="vis">
                     <?php include "../newdatavis.html"; ?>
+                    <?php include "audiocontrol.php"; ?>
                 </div>
                 <div id="SaveDiv2" class="save">
                     <form action="exportcsv.php" method="POST">
                         <input type="hidden" name="id" value="<?php echo $_SESSION["matrice_id"] ?>"/>
-                        <button class="sav" type="submit" onclick="testPrevis();">Save</button>
-                        <br/>
-                        <button class="cancel" type="reset">Cancel</button>
-                        <br/>
-                        <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
+                        <button class="sav" type="Submit" onclick="testPrevis();">Exporter en CSV</button>
                     </form>
+                    <br/>
+                    <button class="cancel" type="Submit">Importer un fichier Audio</button>
+                    <br/>
+                    <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
+                    <br/>
+                    <button type="reset" style="border-color: black; background-color: white; margin-top: -3.2vh;" class="cancel" onclick="copyTimeStamp()">Copy TimeStamp</button>
+                    
                 </div>
             </div>
 
