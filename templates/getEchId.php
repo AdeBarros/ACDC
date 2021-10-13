@@ -10,10 +10,10 @@
 
     function changeTS(form) {
       let text;
-      let newtimestamp = prompt("Veuillez choisir le nouveau TimeStamp:", document.getElementById("newts").getAttribute("value"));
+      let newtimestamp = prompt("Veuillez choisir le nouveau TimeStamp:", form.childNodes[1].getAttribute("value"));
       if (newtimestamp != null && newtimestamp != "") {
 
-        document.getElementById("newts").setAttribute("value", newtimestamp);
+        form.childNodes[1].setAttribute("value", newtimestamp);
         form.submit();
 
       }
@@ -73,7 +73,7 @@
 
           }
         }
-        echo "<div class='echplusboxes>'";
+        echo "<div class='echplusboxes'>";
         echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
         echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";
         echo "</div>";

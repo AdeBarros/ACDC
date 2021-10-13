@@ -20,6 +20,12 @@
             echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
         }
 
+        $sql = "DELETE FROM `interaction` WHERE id_ech = ". $_POST['id_ech'];
+        if(mysqli_query($link, $sql)){
+            echo "Records added successfully.";
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
     }
 
     mysqli_close($link);
