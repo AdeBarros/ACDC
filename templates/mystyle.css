@@ -239,7 +239,15 @@ p{
 }
 
 audio{
+    position: relative;
     width:100%;
+}
+
+.canvas{
+    position: absolute;
+    width:80.3%;
+    height: 48vh;
+    z-index: 5000;
 }
 
 .textinputs{

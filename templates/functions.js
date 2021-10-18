@@ -358,10 +358,7 @@
         
     }
 
-    function copyTimeStamp(){
-        var audio = document.getElementById("playingaudio");
-        var time = audio.currentTime;
-        var min = Math.floor(time/60);
+    function timeToStr(time){var min = Math.floor(time/60);
         var sec = Math.floor(time % 60);
         var strMin = min.toString();
         var strSec = sec.toString();
@@ -371,7 +368,34 @@
         if(sec < 10){
             strSec = "0" + strSec;
         }
-        document.getElementById("timestamp").setAttribute("value", strMin + ":" + strSec);
+        return strMin + ":" + strSec
+    }
+
+    function copyTimeStamp(){
+        var audio = document.getElementById("playingaudio");
+        var time = audio.currentTime;
+        var newTime = timeToStr(time);
+        document.getElementById("timestamp").setAttribute("value", newTime);
+    }
+
+    function setAudioFromPointer(event){
+        var x = event.clientX;
+        var y = event.clientY;
+        var wx = window.innerWidth;
+        var wy = window.innerHeight;
+        var px = 100*x/wx;
+        var py = 100*y/wy;
+
+        var audio =  document.getElementById("playingaudio");
+        var duration = audio.duration;
+        
+        if(px > 14.5 && px < 85.5) {
+            var curTime = ((px - 14.5) / 0.713)  * duration / 100;
+        }
+
+        var coords = " Position: " + px + "%, Durée : " + timeToStr(curTime) ;
+        document.getElementById("demo").innerHTML = coords;
+
     }
 
 

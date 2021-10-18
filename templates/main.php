@@ -151,8 +151,10 @@
             
             <div id="BottomDiv" class="bottom">
                 <div id="VisDiv" class="vis">
+                    <div class="canvas" onclick="setAudioFromPointer(event)"></div> 
                     <?php include "../newdatavis.html"; ?>
                     <?php include "audiocontrol.php"; ?>
+                    <a id="demo">Demo</a>
                 </div>
                 <div id="SaveDiv2" class="save">
                     <form action="exportcsv.php" method="POST">
