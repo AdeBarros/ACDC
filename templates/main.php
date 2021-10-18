@@ -32,7 +32,7 @@
                                 <p>Entrées :</p>
                             </div>
                             <a>TimeStamp :</a>
-                            <input id="timestamp" class="textinputs" name="timestamp" type="datetime" placeholder="00:00" data-toggle="tooltip" data-placement="bottom" title="Instant de début de l'échange (! 2 chiffres minutes et secondes!)" required/>
+                            <input id="timestamp" class="textinputs" name="timestamp" type="datetime" placeholder="00:00" data-toggle="tooltip" data-placement="bottom" title="Instant de début de l'échange (! 2 chiffres minutes et secondes!)" onchange="setTime(this)" required/>
                             <a>Initiateur :</a>
                             <input type="checkbox"  id="participant1" name="participant1"  checked onclick="resetParticipants(this)"/>
                             <label for="participant1" data-toggle="tooltip" data-placement="bottom" title="P1 prend en 1er la parole"><a>P1</a></label>

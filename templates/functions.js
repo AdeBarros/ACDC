@@ -358,7 +358,8 @@
         
     }
 
-    function timeToStr(time){var min = Math.floor(time/60);
+    function timeToStr(time){
+        var min = Math.floor(time/60);
         var sec = Math.floor(time % 60);
         var strMin = min.toString();
         var strSec = sec.toString();
@@ -369,6 +370,10 @@
             strSec = "0" + strSec;
         }
         return strMin + ":" + strSec
+    }
+
+    function tstotime(ts){
+        return parseInt(ts.slice(0, 2)) * 60 + parseInt(-2);
     }
 
     function copyTimeStamp(){
@@ -395,9 +400,20 @@
 
         var coords = " Position: " + px + "%, Durée : " + timeToStr(curTime) ;
         document.getElementById("demo").innerHTML = coords;
+        document.getElementById("timestamp").setAttribute("value", timeToStr(curTime));
 
     }
-
+    /*
+    function setTime(timestamp){
+        ts = timestamp.value;
+        audio = document.getElementById("playingaudio");
+        
+        audio.oncanplay = function() {
+            audio.setAttribute("currentTime", 10);
+        };
+        document.getElementById("demo").innerHTML = audio.currentTime;
+    }
+    */
 
     /*
     function dump(obj) {
