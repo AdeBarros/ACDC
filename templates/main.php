@@ -151,7 +151,7 @@
             
             <div id="BottomDiv" class="bottom">
                 <div id="VisDiv" class="vis">
-                    <div class="canvas" onclick="setAudioFromPointer(event)"></div> 
+                    <canvas id="canvas" class="canvas" onclick="setAudioFromPointer(event)"></canvas> 
                     <?php include "../newdatavis.html"; ?>
                     <?php include "audiocontrol.php"; ?>
                     <a id="demo">Demo</a>
@@ -165,8 +165,6 @@
                     <button class="cancel" type="Submit">Importer un fichier Audio</button>
                     <br/>
                     <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
-                    <br/>
-                    <button type="reset" style="border-color: black; background-color: white; margin-top: -3.2vh;" class="cancel" onclick="copyTimeStamp()">Copy TimeStamp</button>
                     
                 </div>
             </div>

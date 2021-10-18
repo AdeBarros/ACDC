@@ -26,7 +26,7 @@
                 if(!empty($row["audio_name"])){
                     $pathtoaudio = $row["audio_name"];
 
-                    echo "<audio id='playingaudio' controls>";
+                    echo "<audio id='playingaudio' ontimeupdate='trackingLine()' controls>";
                     echo    "<source src='" . $pathtoaudio . "' type='audio/mpeg'>";
                     echo    "Your browser does not support the audio element.";
                     echo '</audio>';

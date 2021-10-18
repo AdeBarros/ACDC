@@ -381,6 +381,8 @@
         var time = audio.currentTime;
         var newTime = timeToStr(time);
         document.getElementById("timestamp").setAttribute("value", newTime);
+
+        
     }
 
     function setAudioFromPointer(event){
@@ -398,7 +400,7 @@
             var curTime = ((px - 14.5) / 0.713)  * duration / 100;
         }
 
-        var coords = " Position: " + px + "%, Durée : " + timeToStr(curTime) ;
+        var coords = "X coords: " + x + ", Y coords: " + y + "; X prc: " + px + "%, Y prc: " + py + "%, Durée : " + timeToStr(curTime) ;
         document.getElementById("demo").innerHTML = coords;
         document.getElementById("timestamp").setAttribute("value", timeToStr(curTime));
 
@@ -414,6 +416,38 @@
         document.getElementById("demo").innerHTML = audio.currentTime;
     }
     */
+
+    function trackingLine(){
+        var audio = document.getElementById("playingaudio");
+        var time = audio.currentTime;
+        var duration = audio.duration;
+
+        var cv = document.getElementById("canvas");
+        var ctx = cv.getContext("2d");
+
+        var minX = cv.width * 0.055;
+        var maxX = cv. width * 0.951;
+        length = maxX - minX;
+        var minY = cv.height * 0.21;
+        var maxY = cv.height * 0.83;
+        height = maxY - minY;
+
+        ctx.clearRect(0, 0, cv.width, cv.height);
+
+        var curX = minX + Math.floor(time * length / duration);
+
+        ctx.beginPath();
+        ctx.moveTo(curX, minY);
+        ctx.lineTo(curX, maxY);
+        ctx.strokeStyle= "black";
+        ctx.lineWidth= 0.5;
+        ctx.stroke();
+
+        copyTimeStamp()
+    }
+
+    var audio = document.getElementById("playingaudio");
+    audio.onplay( function (){ alert("aled"); });
 
     /*
     function dump(obj) {
