@@ -54,29 +54,30 @@
           echo "<div type='button' class='echsaves' id='EchSaves" . $i . "' tem='" . $row['temp_ech'] . "' agini = '" . $row['agent_init'] . "' dini = '" . $row['diff_init'] . "' long='" . $row['long'] . "' forc='" . $row['force_ech'] . "' deci='" . $row['decision'] . "' onclick='importDataEch(this)'>";
           echo $row["temp_ech"];
           
-        }
+        
 
-        # Récupération des échanges
+          # Récupération des échanges
 
-        $sql2 = "SELECT * FROM interaction 
-        WHERE id_ech = $i ORDER BY temp_inter ;";
+          $sql2 = "SELECT * FROM interaction 
+          WHERE id_ech = $i ORDER BY temp_inter ;";
 
-        $result2 = $mysqli->query($sql2);
+          $result2 = $mysqli->query($sql2);
 
-        if ($result2->num_rows > 0) {
+          if ($result2->num_rows > 0) {
 
-          while($row2 = $result2->fetch_assoc()) {
-            if(!empty($row2['id_inter']))
-            
-            # Ecriture d'un petit carré bleu pour chaque interaction
-            echo "<div class='intersaves' id='InterSaves" . $row2['id_inter'] . "' tem='" . $row2['temp_inter'] . "' typ='" . $row2['type_inter'] . "' ></div>";
+            while($row2 = $result2->fetch_assoc()) {
+              if(!empty($row2['id_inter']))
+              
+              # Ecriture d'un petit carré bleu pour chaque interaction
+              echo "<div class='intersaves' id='InterSaves" . $row2['id_inter'] . "' tem='" . $row2['temp_inter'] . "' typ='" . $row2['type_inter'] . "' ></div>";
 
+            }
           }
+          echo "<div class='echplusboxes'>";
+          echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
+          echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";
+          echo "</div>";
         }
-        echo "<div class='echplusboxes'>";
-        echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
-        echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";
-        echo "</div>";
       }
       
       echo "</div>";

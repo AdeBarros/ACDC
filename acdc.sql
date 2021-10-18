@@ -95,8 +95,7 @@ CREATE TABLE `interaction` (
 
 CREATE TABLE `matrice` (
   `id_mat` int(11) NOT NULL,
-  `id_ech` int(11) NOT NULL,
-  `ids_evt` int(11) NOT NULL,
+  `label_mat` varchar(50) NOT NULL,
   `audio_name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
