@@ -52,6 +52,7 @@ USE acdc;
 
 CREATE TABLE `echange` (
   `id_ech` int(11) NOT NULL,
+  `id_mat` int(11) NOT NULL,
   `temp_ech` varchar(50) NOT NULL,
   `agent_init` int(11) NOT NULL,
   `diff_init` tinyint(1) NOT NULL,
@@ -68,6 +69,7 @@ CREATE TABLE `echange` (
 
 CREATE TABLE `evenement` (
   `id_evt` int(11) NOT NULL,
+  `id_mat` int(11) NOT NULL,
   `temp_evt` datetime NOT NULL,
   `desc_evt` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -95,6 +97,7 @@ CREATE TABLE `matrice` (
   `id_mat` int(11) NOT NULL,
   `id_ech` int(11) NOT NULL,
   `ids_evt` int(11) NOT NULL
+  `audio_name` varchar(100) NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -106,12 +109,18 @@ CREATE TABLE `matrice` (
 --
 ALTER TABLE `echange`
   ADD PRIMARY KEY (`id_ech`);
-
+  
 --
 -- Indexes for table `interaction`
 --
 ALTER TABLE `interaction`
   ADD PRIMARY KEY (`id_inter`);
+
+--
+-- Indexes for table `matrice`
+--
+ALTER TABLE `matrice`
+  ADD PRIMARY KEY (`id_mat`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -128,6 +137,13 @@ ALTER TABLE `echange`
 --
 ALTER TABLE `interaction`
   MODIFY `id_inter` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+--
+-- AUTO_INCREMENT for table `matrice`
+--
+ALTER TABLE `matrice`
+  MODIFY `id_mat` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
