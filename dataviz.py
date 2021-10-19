@@ -126,7 +126,7 @@ def datavis():
         width = widthmin + widthsec/60  
         
     """
-    width = 9.83 # !!! A supprimer lors de la suppression de la somution temp
+    width = 9.8 # !!! A supprimer lors de la suppression de la somution temp
     
     # ajout des bandes grises
     addSpans(fig, width + 0.2)
@@ -211,9 +211,30 @@ def datavis():
         # Test
         # addLine(fig, temp, agent, temp, abs(int(ech_dict["long"])-abs(agent)+1), "black")
         
+
+        # Ajout de l'évènement
+        if(ech_dict["evt"] != None):
+            fig.add_layout_image(
+            dict(
+                source="http://localhost/ACDC/templates/Images/{}.png".format("Evenement"),
+                xref="x",
+                yref="paper",
+                xanchor='center',
+                yanchor='middle',
+                x=temp,
+                y=-0.05,
+                sizex=0.13,
+                sizey=0.66,
+                sizing="contain",
+                opacity=1,
+                layer="below"
+                )
+            )
+        
+
         # Puis on s'attaque à leurs interactions
         j=0        
-        while(j < len(ech_dict)-6):
+        while(j < len(ech_dict)-7):
             int_dict = ech_dict[str(j)]
 
             # cas de la coupure

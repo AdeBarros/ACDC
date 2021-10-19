@@ -344,6 +344,7 @@
             echData["force"] = echange.getAttribute("forc");
             echData["deci"] = echange.getAttribute("deci");
             echData["dini"] = echange.getAttribute("dini");
+            echData["evt"] = null;
 
             while(j < numInter){
                 interaction = echange.children[j];
@@ -353,6 +354,10 @@
                     interData["type"] = interaction.getAttribute("typ");
                     stringJ = String(j);
                     echData[stringJ] = interData;
+
+                }
+                else if(interaction.getAttribute("id").slice(0, 5) == "Event"){
+                    echData["evt"] = interaction.getAttribute("desc");
                 }
                 j++;
             }
