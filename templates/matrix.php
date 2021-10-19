@@ -22,7 +22,7 @@
         // Cas Nouvelle Matrice
         if(!empty($_POST["newmatrix"])){
             $matrixlabel = $_POST["newmatrix"];
-            $sql = "INSERT INTO matrice (`label_mat`) VALUES ('$matrixlabel');";
+            $sql = "INSERT INTO matrice (`label_mat`, `audio_name`) VALUES ('$matrixlabel', '');";
 
             if ($link->query($sql) === TRUE) {
                 echo "New record created successfully";
