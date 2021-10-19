@@ -469,9 +469,6 @@
         copyTimeStamp()
     }
 
-    var audio = document.getElementById("playingaudio");
-    audio.onplay( function (){ alert("aled"); });
-
     /*
     function dump(obj) {
         var out = '';
