@@ -163,6 +163,14 @@ python3 -m flask run
 
 Le fichier `./templates/main.php` doit être interprété par le serveur et accessible à une adresse du type : http://localhost/ACDC/templates/main.php
 
+Une fois le fichier lancé, vous serez redirigé vers une page de choix de matrice à une adresse du type : http://localhost/ACDC/templates/matrix.php
+
+Depuis cette page, vous pourrez :
+* Ouvrir une matrice existante
+* Créer une nouvelle matrice
+* Importer une matrice au format sql
+
+
 ### Références
 
 [mysql-create-db]: https://stackoverflow.com/a/5774940
