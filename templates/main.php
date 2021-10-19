@@ -24,7 +24,7 @@
 
             <div id="TopDiv" class="top">
 
-                <form action="db.php" method="post" onsubmit="insertPrevis();">
+                <form id="dbconnect" action="db.php" method="POST" onsubmit="insertPrevis();">
                     <input type="hidden" name="matrice_id" value="<?php echo $_SESSION["matrice_id"];  ?>"/>
                     <div id="ForceDiv" class="force">
                         <div id="MiscDiv" class="misc">
@@ -143,6 +143,12 @@
                         <a class="interlabel2">RNT</a>
                         <a class="interlabel2">RPP</a>
                         <a class="interlabel2">RNP</a>  
+                        <div id="EvenentInteractions" class="labevt">
+                            <p>Evenement :</p>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <input type="text" id="evenement" name="evenement" class="evenement" placeholder="Notez vos évènements ici" form="dbconnect"></input>
                     </div>
 
                 </form>
@@ -154,7 +160,7 @@
                     <canvas id="canvas" class="canvas" onclick="setAudioFromPointer(event)"></canvas> 
                     <?php include "../newdatavis.html"; ?>
                     <?php include "audiocontrol.php"; ?>
-                    <a id="demo">Demo</a>
+                    <!--<a id="demo">Demo</a>-->
                 </div>
                 <div id="SaveDiv2" class="save">
                     <form action="exportcsv.php" method="POST">

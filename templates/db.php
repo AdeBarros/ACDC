@@ -34,6 +34,7 @@
     $p1 = null;
     $p2 = null;
     $di = null;
+    $evt = null;
 
     // Null si vide, true si seclectionné
 
@@ -54,6 +55,7 @@
     $p1 = !empty($_POST['participant1']) ? $_POST['participant1'] : null;
     $p2 = !empty($_POST['participant2']) ? $_POST['participant2'] : null;
     $di = !empty($_POST['diffini']) ? $_POST['diffini'] : null;
+    $evt = $_POST['evenement'];
 
 
     // Sélection de la matrice
@@ -98,7 +100,7 @@
 */  
 
     // CAS UPDATE
-    $sql = "SELECT id_ech FROM `echange` WHERE id_mat = '". $matrice ."' temp_ech = '". $timestamp ."' AND agent_init = ". $initiateur;
+    $sql = "SELECT * FROM `echange` WHERE id_mat = '". $matrice ."' AND temp_ech = '". $timestamp ."' AND agent_init = ". $initiateur;
     echo $sql;
     $result0 = $link->query($sql);
     // Si l'échange existe déjà, on le supprime avant de le ré-ajouter
@@ -169,6 +171,17 @@
             }
         }
         $i += 1;
+    }
+
+    // Insertion des évènements
+    if($evt != null && $evt != ""){
+        $sql = "INSERT INTO `evenement` (`id_evt`, `id_ech`, `desc_evt`) VALUES (0, $maxid, '$evt')";
+        echo "Evenement :" . $evt;
+        if(mysqli_query($link, $sql)){
+            echo "Records added successfully.";
+        } else{
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+        }
     }
 
     // Fermeture de connexion à la BDD

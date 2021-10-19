@@ -54,7 +54,6 @@
           echo "<div type='button' class='echsaves' id='EchSaves" . $i . "' tem='" . $row['temp_ech'] . "' agini = '" . $row['agent_init'] . "' dini = '" . $row['diff_init'] . "' long='" . $row['long'] . "' forc='" . $row['force_ech'] . "' deci='" . $row['decision'] . "' onclick='importDataEch(this)'>";
           echo $row["temp_ech"];
           
-        
 
           # Récupération des échanges
 
@@ -73,6 +72,21 @@
 
             }
           }
+
+          # Récupération de l'évènement
+          $sql3 = "SELECT id_evt, desc_evt FROM evenement WHERE id_ech = $i ;";
+
+          $result3 = $mysqli->query($sql3);
+
+          if($result3->num_rows > 0) {
+            while($row3 = $result3->fetch_assoc()) {
+              if(!empty($row3["id_evt"])){
+                # Ecriture d'un petit carré bleu pour l'évènement
+                echo "<div class='evtsaves' id='EventSaves" . $row3['id_evt'] . "' desc='" . $row3['desc_evt'] . "' ></div>";
+              }
+            }
+          }
+
           echo "<div class='echplusboxes'>";
           echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
           echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";

@@ -69,8 +69,7 @@ CREATE TABLE `echange` (
 
 CREATE TABLE `evenement` (
   `id_evt` int(11) NOT NULL,
-  `id_mat` int(11) NOT NULL,
-  `temp_evt` datetime NOT NULL,
+  `id_ech` int(11) NOT NULL,
   `desc_evt` varchar(600) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -108,6 +107,13 @@ CREATE TABLE `matrice` (
 --
 ALTER TABLE `echange`
   ADD PRIMARY KEY (`id_ech`);
+
+
+--
+-- Indexes for table `echange`
+--
+ALTER TABLE `evenement`
+  ADD PRIMARY KEY (`id_evt`);
   
 --
 -- Indexes for table `interaction`
@@ -130,6 +136,13 @@ ALTER TABLE `matrice`
 --
 ALTER TABLE `echange`
   MODIFY `id_ech` int(11) NOT NULL AUTO_INCREMENT;
+
+
+--
+-- AUTO_INCREMENT for table `echange`
+--
+ALTER TABLE `evenement`
+  MODIFY `id_evt` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `interaction`

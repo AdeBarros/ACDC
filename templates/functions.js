@@ -118,11 +118,17 @@
         elm.value = "";
     }
 
+    function resetevenement() {
+        var evt = document.getElementById('evenement');
+        evt.value = "";
+    }
+
     // Permet de remettre le Form entier à sa valeur initiale
     function resetForm(elm) {
         resetTimestamp();
         resetParticipants(elm);
         resetLongueur();
+        resetevenement();
         uncheckForce(elm);
         uncheckDecision(elm);
         uncheckInteraction(elm);
@@ -242,6 +248,8 @@
     // Importe les données insérées dans les cases (depuis la BDD) et ajoute ces données dans le Form
     function importDataEch(div){
 
+        resetevenement();
+
         var i = 1;
         var j = 0;
 
@@ -293,9 +301,17 @@
         }
 
         while(div.childElementCount >= i){
-            document.getElementById("Zone" + div.childNodes[i].getAttribute("tem")).appendChild(document.getElementById(div.childNodes[i].getAttribute("typ")).cloneNode(true));
+            var child = div.childNodes[i];
+            if(child.id.slice(0, 5) == "Inter"){
+                document.getElementById("Zone" + div.childNodes[i].getAttribute("tem")).appendChild(document.getElementById(child.getAttribute("typ")).cloneNode(true));
+            }
+            if(child.id.slice(0, 5) == "Event"){
+                document.getElementById("evenement").value = child.getAttribute("desc");
+            }
             i += 1;
         }
+
+        
     }
     
     // Met à jour la Datavis avec le code Python (! lancer Flask avant)
@@ -331,11 +347,13 @@
 
             while(j < numInter){
                 interaction = echange.children[j];
-                interData = {}
-                interData["temp"] = interaction.getAttribute("tem");
-                interData["type"] = interaction.getAttribute("typ");
-                stringJ = String(j);
-                echData[stringJ] = interData;
+                if(interaction.getAttribute("id").slice(0, 5) == "Inter"){
+                    interData = {}
+                    interData["temp"] = interaction.getAttribute("tem");
+                    interData["type"] = interaction.getAttribute("typ");
+                    stringJ = String(j);
+                    echData[stringJ] = interData;
+                }
                 j++;
             }
             stringI = String(i);

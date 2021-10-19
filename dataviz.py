@@ -107,9 +107,12 @@ def datavis():
     print(len(dict_x_new))
     
     # definition de la largeur du plot
+    
+    """ Solution temp alignement audio-frise
     # cas frise vide
     if len(dict_x_new) == 0:
-        width = 19.8
+        width = 9.83
+
     # cas frise utilisée moins d'1 min
     elif float(dict_x_new[str(len(dict_x_new)-1)]["temp"].split(":")[0]) < 1:
         width = 0.81
@@ -121,6 +124,9 @@ def datavis():
         widthmin = int(widthtemp[0])
         widthsec = int(widthtemp[1])
         width = widthmin + widthsec/60  
+        
+    """
+    width = 9.83 # !!! A supprimer lors de la suppression de la somution temp
     
     # ajout des bandes grises
     addSpans(fig, width + 0.2)
