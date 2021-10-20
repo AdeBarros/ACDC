@@ -31,21 +31,21 @@
                             <div id="LabelMisc" class="lab">
                                 <p>Entrées :</p>
                             </div>
-                            <a>TimeStamp :</a>
+                            <a>Temps début :</a>
                             <input id="timestamp" class="textinputs" name="timestamp" type="datetime" placeholder="00:00" data-toggle="tooltip" data-placement="bottom" title="Instant de début de l'échange (! 2 chiffres minutes et secondes!)" onchange="setTime(this)" required/>
-                            <a>Initiateur :</a>
+                            <a>Init. Action :</a>
                             <input type="checkbox"  id="participant1" name="participant1"  checked onclick="resetParticipants(this)"/>
                             <label for="participant1" data-toggle="tooltip" data-placement="bottom" title="P1 prend en 1er la parole"><a>P1</a></label>
                             <input type="checkbox" id="participant2" name="participant2" onclick="resetParticipants(this)" />
                             <label for="participant2" data-toggle="tooltip" data-placement="bottom" title="P2 prend en 1er la parole"><a>P2</a></label>
-                            <a>Si différent :</a>
+                            <a>Si Init. Échange diff. :</a>
                             <input type=checkbox id="diffini" name="diffini"></input>
                             <label for="diffini" data-toggle="tooltip" data-placement="bottom" title="La personne prenant la parole n'est pas celle qui initie l'échange"><a>D.I.</a></label>
-                            <a>Longeur :</a>
+                            <a>Longueur :</a>
                             <input id="Longueur" class="textinputs" type="number" value="0" min="0" name="Longueur" placeholder="Longueur" data-toggle="tooltip" data-placement="bottom" title="Longueur : Nombre d'aller-retours de la parole (La première prise de parole est notée à '0')" onchange="refresh()" required/>
                         </div>
                             <div id="LabelForce" class="lab">
-                                <p>Forces :</p>
+                                <p>Action :</p>
                             </div>
                             <br/>
                         <div id="StringDiv" class="string">
@@ -63,10 +63,10 @@
                             <label for="commentaire"  data-toggle="tooltip" data-placement="bottom" title="Commentaire : tout type de syntaxe non directive ni réponse, commentaire sur le jeu ou un sujet annexe" ><img src="Images/commentaire.png" /></label>
                             <br/>
                             <a class="imglabel">Ordre</a>
-                            <a class="imglabel">Instu</a>
+                            <a class="imglabel">Instr</a>
                             <a class="imglabel">Propo</a>
-                            <a class="imglabel">Nverb</a>
-                            <a class="imglabel">Soliloq</a>
+                            <a class="imglabel">NVerb</a>
+                            <a class="imglabel">Solli</a>
                             <a class="imglabel">Comm</a>
                         </div>
                         <div id="DecisionDiv" class="decision">
@@ -107,9 +107,9 @@
 
 
                     <div id="SaveDiv1" class="save">
-                        <button class="sav" type="submit" >Save</button>
+                        <button class="sav" type="submit" >Sauvegarder</button>
                         <br/>
-                        <button class="cancel" type="reset" onclick="location.reload();" >Cancel</button>
+                        <button class="cancel" type="reset" onclick="location.reload();" >Annuler</button>
                     </div>
                         <div id="LabelInteractions" class="lab">
                             <p>Interactions :</p>
@@ -170,7 +170,7 @@
                     <br/>
                     <button id="changemode" class="cancel" type="Submit" onclick="changeMode();" >Mode Suivi</button>
                     <br/>
-                    <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
+                    <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Raffraichir Datavis</button>
                     
                 </div>
             </div>

@@ -151,7 +151,7 @@ def datavis():
     )
     fig.update_yaxes(
             tickangle = 0,
-            title_text = "Temporalité de l'échange",
+            title_text = "Longueur de l'échange",
             title_font = {"size": 20},
             title_standoff = 10,
             #nticks=5,

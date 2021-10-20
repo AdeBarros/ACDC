@@ -10,7 +10,7 @@
 
     function changeTS(form) {
       let text;
-      let newtimestamp = prompt("Veuillez choisir le nouveau TimeStamp:", form.childNodes[1].getAttribute("value"));
+      let newtimestamp = prompt("Veuillez choisir le nouveau 'Temps début' :", form.childNodes[1].getAttribute("value"));
       if (newtimestamp != null && newtimestamp != "") {
 
         form.childNodes[1].setAttribute("value", newtimestamp);
