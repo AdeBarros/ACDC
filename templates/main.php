@@ -168,7 +168,7 @@
                         <button class="sav" type="Submit" onclick="testPrevis();">Exporter en CSV</button>
                     </form>
                     <br/>
-                    <button class="cancel" type="Submit">Importer un fichier Audio</button>
+                    <button id="changemode" class="cancel" type="Submit" onclick="changeMode();" >Mode Suivi</button>
                     <br/>
                     <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Refresh Datavis</button>
                     

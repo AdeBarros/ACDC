@@ -88,7 +88,7 @@
             <br/>
             <br/>
             <label for="newaudio">Importer un fichier Audio (optionnel) :</label>
-            <input id="newaudio" name="newaudio" type="file" accept=".mp3"/>
+            <input id="newaudio" name="newaudio" type="file" accept=".mp3,.m4a"/>
             <br/>
             <br/>
             <button type="submit">Ouvrir</button>

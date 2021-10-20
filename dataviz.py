@@ -71,6 +71,12 @@ def datavis():
                 return ""
             else:
                 return "flip"
+
+    def decFlip(agini):
+        if(agini == "1"):
+            return ""
+        else:
+            return "flip"
     
     #test de addline
     #addLine(fig, 3,2,3,5,'Blue')
@@ -175,7 +181,7 @@ def datavis():
             # Ajout de la Décision
             fig.add_layout_image(
                 dict(
-                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(ech_dict["deci"], imgFlip(ech_dict["agini"],0,0)),
+                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(ech_dict["deci"], decFlip(ech_dict["agini"])),
                     xref="x",
                     yref="y",
                     xanchor='center',

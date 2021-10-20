@@ -1,5 +1,6 @@
     // Ol' reliable
     var i = 0;
+    var modAnalyse = true;
 
     // Activation des Tooltips
     $(document).ready(function(){
@@ -467,6 +468,19 @@
         ctx.stroke();
 
         copyTimeStamp()
+    }
+
+    function changeMode(){
+        if(modAnalyse == true){
+            document.getElementById("canvas").style.zIndex = 0;
+            document.getElementById("changemode").innerHTML = "Mode Analyse";
+            modAnalyse = false;
+        }
+        else{
+            document.getElementById("canvas").style.zIndex = 5000;
+            document.getElementById("changemode").innerHTML = "Mode Suivi";
+            modAnalyse = true;
+        }
     }
 
     /*
