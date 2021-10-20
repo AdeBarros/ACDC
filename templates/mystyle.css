@@ -67,6 +67,7 @@ img{
     background-color: aliceblue;
     width:10%;
     height:90vh;
+    overflow: scroll;
 }
 
 .right{
