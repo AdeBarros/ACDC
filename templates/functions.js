@@ -336,7 +336,7 @@
 
         while(i < numEch){
             echange = dataset.children[i+2];
-            numInter = echange.childElementCount - 3;
+            numInter = echange.childElementCount - 2;
             j = 0;
             echData = {};
             echData["temp"] = echange.getAttribute("tem");
