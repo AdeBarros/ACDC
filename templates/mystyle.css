@@ -18,19 +18,21 @@
 
 .delete{
     background-color: red;
-    width: 3ch;
+    width: 2.5ch;
     height: 2vh;
     top: 0px;
     float:right;
     text-align-last: center;
+    border: 0.3ch solid grey;
 }
 
 .modify{
     background-color: orange;
-    width: 3ch;
+    width: 2.5ch;
     height: 2vh;
     float:right;
     text-align-last: center;
+    border: 0.3ch solid grey;
 }
 
 img{

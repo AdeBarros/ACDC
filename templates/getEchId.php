@@ -66,8 +66,8 @@
           }
 
           echo "<div class='echplusboxes'>";
-          echo "<form onsubmit='event.preventDefault(); confSubmit(this);' action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' value='x' class='delete'></input></form>";
-          echo "<form onSubmit='event.preventDefault(); changeTS(this);' action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input id='newAI' name='newAI' value='". $row['agent_init'] ."' type='hidden'/><input type='submit' value='i' class='modify'></input></form>";
+          echo "<form onsubmit='event.preventDefault(); confSubmit(this);' action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='image' src='Images/croix.png' class='delete'></input></form>";
+          echo "<form onSubmit='event.preventDefault(); changeTS(this);' action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input id='newAI' name='newAI' value='". $row['agent_init'] ."' type='hidden'/><input type='image' src='Images/pen.png' class='modify'/></input></form>";
           echo "</div>";
           
 
