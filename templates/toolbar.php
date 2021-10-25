@@ -48,6 +48,6 @@ mysqli_close($link);
 
 ?>
 
-        <input class="close" type="button" onclick="document.location.href='matrix.php'" value="x"/>
+        <input class="close" type="button" onclick="returnToMatrix()" value="x"/>
 
 </div> 

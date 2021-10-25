@@ -483,6 +483,12 @@
         }
     }
 
+    function returnToMatrix(){
+        if(confirm("Voulez-vous quitter et retourner sur la page d'accueil ? Les données non sauvegardées seront perdues")){
+            document.location.href='matrix.php';
+        }
+    }
+
     /*
     function dump(obj) {
         var out = '';
