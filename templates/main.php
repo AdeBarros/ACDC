@@ -24,7 +24,7 @@
 
             <div id="TopDiv" class="top">
 
-                <form id="dbconnect" action="db.php" method="POST" onsubmit="insertPrevis();">
+                <form id="dbconnect" action="db.php" method="POST" onsubmit="event.preventDefault(); valForm(this);">
                     <input type="hidden" name="matrice_id" value="<?php echo $_SESSION["matrice_id"];  ?>"/>
                     <div id="ForceDiv" class="force">
                         <div id="MiscDiv" class="misc">
@@ -107,7 +107,7 @@
 
 
                     <div id="SaveDiv1" class="save">
-                        <button class="sav" type="submit" >Sauvegarder</button>
+                        <input class="sav" type="submit" value="Sauvegarder"></button>
                         <br/>
                         <button class="cancel" type="reset" onclick="location.reload();" >Annuler</button>
                     </div>

@@ -193,10 +193,6 @@
         document.getElementById("Longueur").value = parseInt(document.getElementById("Longueur").value) + val;
     }
 
-    // Permet de ne lancer le Form que lorsqu'on a au moins rentré les paramètres minimaux (Force, Timestamp, P1/P2, Longueur)
-    function validateMyForm(){ //J'arrive pas à le faire marcher...
-        alert($('div.string :checkbox:checked').length > 0);
-    }
 
     // Test de la prévis...
     function testPrevis(){
@@ -323,7 +319,7 @@
         var echData = {};
         var interData = {};
         const dataset = document.getElementById("LeftDiv");
-        const numEch = dataset.childElementCount - 2;
+        const numEch = dataset.childElementCount - 1;
         var echange = null;
         var numInter = null;
         var interaction = null;
@@ -334,7 +330,7 @@
         var stringJ = "0";
 
         while(i < numEch){
-            echange = dataset.children[i+2];
+            echange = dataset.children[i+1];
             numInter = echange.childElementCount - 2;
             j = 0;
             echData = {};
@@ -487,6 +483,47 @@
             document.location.href='matrix.php';
         }
     }
+
+    
+    // Permet de ne lancer le Form que lorsqu'on a au moins rentré les paramètres minimaux (Force, Timestamp, P1/P2, Longueur)
+    function valForm(form){ //J'arrive pas à le faire marcher...
+        var ordre = document.getElementById("ordre");
+        var instruction = document.getElementById("instruction");
+        var proposition = document.getElementById("proposition");
+        var nonverbal = document.getElementById("nonverbal");
+        var soliloque = document.getElementById("soliloque");
+        var commentaire = document.getElementById("commentaire");
+        if(ordre.checked || instruction.checked || proposition.checked || nonverbal.checked || soliloque.checked || commentaire.checked){
+            insertPrevis();
+            form.submit();
+        }
+        else{
+            alert("Veuillez entrer une force pour cet échange");
+        }
+    }
+
+    
+    function confSubmit(form) {
+        if (confirm("Voulez-vous vraiment supprimer cet échange ?")) {
+          form.submit();
+        }
+        else{
+          returnToPreviousPage();
+          return false;
+        }
+      }
+
+    
+      function changeTS(form) {
+        let text;
+        let newtimestamp = prompt("Veuillez choisir le nouveau 'Temps début' :", form.childNodes[1].getAttribute("value"));
+        if (newtimestamp != null && newtimestamp != "") {
+  
+          form.childNodes[1].setAttribute("value", newtimestamp);
+          form.submit();
+  
+        }
+      }
 
     /*
     function dump(obj) {

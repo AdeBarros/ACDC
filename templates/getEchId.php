@@ -1,26 +1,4 @@
 <!DOCTYPE php>
-<head>
-  <script type="text/javascript">
-
-    function confSubmit(form) {
-      if (confirm("Voulez-vous vraiment supprimer cet échange ?")) {
-        form.submit();
-      }
-    }
-
-    function changeTS(form) {
-      let text;
-      let newtimestamp = prompt("Veuillez choisir le nouveau 'Temps début' :", form.childNodes[1].getAttribute("value"));
-      if (newtimestamp != null && newtimestamp != "") {
-
-        form.childNodes[1].setAttribute("value", newtimestamp);
-        form.submit();
-
-      }
-    }
-    
-  </script>
-</head>
 <?php
 
     // Connexion à la BDD
@@ -88,8 +66,8 @@
           }
 
           echo "<div class='echplusboxes'>";
-          echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
-          echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";
+          echo "<form onsubmit='event.preventDefault(); confSubmit(this);' action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' value='x' class='delete'></input></form>";
+          echo "<form onSubmit='event.preventDefault(); changeTS(this);' action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' value='i' class='modify'></input></form>";
           echo "</div>";
           
 
