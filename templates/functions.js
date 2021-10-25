@@ -515,14 +515,21 @@
 
     
       function changeTS(form) {
-        let text;
         let newtimestamp = prompt("Veuillez choisir le nouveau 'Temps début' :", form.childNodes[1].getAttribute("value"));
-        if (newtimestamp != null && newtimestamp != "") {
-  
+        let newAgentInit = prompt("Veuillez choisir l'agent initiateur :", form.childNodes[2].getAttribute("value"));
+        let change = false;
+        if (newtimestamp != null && newtimestamp != "" && newtimestamp != form.childNodes[1].getAttribute("value")) {
           form.childNodes[1].setAttribute("value", newtimestamp);
-          form.submit();
-  
+          change = true;
         }
+        if (newAgentInit != null && newAgentInit != "" && newAgentInit != form.childNodes[2].getAttribute("value")) {
+            form.childNodes[2].setAttribute("value", newAgentInit);
+            change = true;
+        }
+        if (change){
+            form.submit();
+        }
+
       }
 
     /*
