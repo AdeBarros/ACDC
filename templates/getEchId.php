@@ -91,6 +91,21 @@
           echo "<form action='supprech.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input type='submit' onClick='confSubmit(this.form);' value='x' class='delete'></input></form>";
           echo "<form action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input type='submit' onClick='changeTS(this.form);' value='i' class='modify'></input></form>";
           echo "</div>";
+          
+
+          if($row['agent_init'] == 1){
+            echo "<div class='echimgboxes'>";
+            echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
+            echo "<img src='Images/" . $row['decision'] . ".png' class='imgprev'/>";
+            echo "</div>";
+          }
+          else{
+            echo "<div class='echimgboxes'>";
+            echo "<img src='Images/" . $row['decision'] . "flip.png' class='imgprev'/>";
+            echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
+            echo "</div>";
+
+          }
         }
       }
       

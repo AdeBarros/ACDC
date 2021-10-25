@@ -83,6 +83,7 @@
     elseif($refus == true){ $decision = 'refus' ;}
     elseif($concession == true){ $decision = 'concession' ;}
     elseif($indetermine == true){ $decision = 'indetermine' ;}
+    else{$decision = 'sans';}
 
     // Sélection de l'initiateur
 
