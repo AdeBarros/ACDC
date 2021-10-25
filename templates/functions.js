@@ -190,7 +190,10 @@
 
     //Permet d'avoir toujours la longueur à la même taille que la prévis
     function addtolength(val){
-        document.getElementById("Longueur").value = parseInt(document.getElementById("Longueur").value) + val;
+        let long = parseInt(document.getElementById("Longueur").value);
+        if(long + val >= 0){
+            document.getElementById("Longueur").value = long + val;
+        }
     }
 
 

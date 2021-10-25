@@ -34,13 +34,13 @@
                             <a>Temps début :</a>
                             <input id="timestamp" class="textinputs" name="timestamp" type="datetime" placeholder="00:00" data-toggle="tooltip" data-placement="bottom" title="Instant de début de l'échange (! 2 chiffres minutes et secondes!)" onchange="setTime(this)" required/>
                             <a>Init. Action :</a>
-                            <input type="checkbox"  id="participant1" name="participant1"  checked onclick="resetParticipants(this)"/>
-                            <label for="participant1" data-toggle="tooltip" data-placement="bottom" title="P1 prend en 1er la parole"><a>P1</a></label>
+                            <input type="checkbox"  id="participant1" name="participant1"  checked onclick="resetParticipants(this)"  />
+                            <label for="participant1" data-toggle="tooltip" data-placement="bottom" title="P1 prend en 1er la parole" class="check"><a>P1</a></label>
                             <input type="checkbox" id="participant2" name="participant2" onclick="resetParticipants(this)" />
-                            <label for="participant2" data-toggle="tooltip" data-placement="bottom" title="P2 prend en 1er la parole"><a>P2</a></label>
+                            <label for="participant2" data-toggle="tooltip" data-placement="bottom" title="P2 prend en 1er la parole" class="check"><a>P2</a></label>
                             <a>Si Init. Échange diff. :</a>
                             <input type=checkbox id="diffini" name="diffini"></input>
-                            <label for="diffini" data-toggle="tooltip" data-placement="bottom" title="La personne prenant la parole n'est pas celle qui initie l'échange"><a>D.I.</a></label>
+                            <label for="diffini" data-toggle="tooltip" data-placement="bottom" title="La personne prenant la parole n'est pas celle qui initie l'échange" class="check"><a>D.I.</a></label>
                             <a>Longueur :</a>
                             <input id="Longueur" class="textinputs" type="number" value="0" min="0" name="Longueur" placeholder="Longueur" data-toggle="tooltip" data-placement="bottom" title="Longueur : Nombre d'aller-retours de la parole (La première prise de parole est notée à '0')" onchange="refresh()" required/>
                         </div>
@@ -170,7 +170,7 @@
                     <br/>
                     <button id="changemode" class="cancel" type="Submit" onclick="changeMode();" >Mode Suivi</button>
                     <br/>
-                    <button type="reset" style="color: white; border-color: green; background-color: green" class="cancel"  onclick="datavisRefresh()">Raffraichir Datavis</button>
+                    <button type="reset" style="border-color: #2C394B ; background-color: #2C394B ; color: white" class="cancel"  onclick="datavisRefresh()">Raffraichir Datavis</button>
                     
                 </div>
             </div>

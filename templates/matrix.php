@@ -52,72 +52,76 @@
         
           $link->close();
     ?>
+    
+    <div class="matrix">
+        <h1 style="color: white">Bienvenue sur l'outil de Retranscription ACDC</h1>
+        <h4 style="color: white ; margin-top: 5vh;" >Afin de continuer, veuillez sélectionner une matrice sur laquelle vous voulez travailler :</h4>
+        <br/>
+        <div class="mainMatrix">
+            <div class="matrixForm"> 
+                <form action="main.php" method="post" enctype="multipart/form-data"> 
+                    <h3>Ouvrir une matrice existante</h3>
+                    <label for="matrice">Matrice :</label>
+                    <select name="matrix" id="matrice" required>
+                        <option value="">Veuillez Choisir une matrice</option>
 
-    <div>
-        <h1>Bienvenue sur l'outil de Retranscription ACDC</h1>
-        <h4>Afin de continuer, veuillez sélectionner une matrice sur laquelle vous voulez travailler :</h4>
-        
-        <form action="main.php" method="post" enctype="multipart/form-data">  
-            <label for="matrice">Matrice :</label>
-            <select name="matrix" id="matrice" required>
-                <option value="">Veuillez Choisir une matrice</option>
+                        <?php
 
-                <?php
+                            // Connexion à la BDD
+                            $mysqli = new mysqli("localhost", "acdcuser", "acdc2021", "acdc");
+                            // Test de connexion
+                            if($mysqli->connect_error) {
+                                exit('Could not connect');
+                            }
 
-                    // Connexion à la BDD
-                    $mysqli = new mysqli("localhost", "acdcuser", "acdc2021", "acdc");
-                    // Test de connexion
-                    if($mysqli->connect_error) {
-                        exit('Could not connect');
-                    }
+                            // Message SQL de récupération des données des échanges associées à leurs interactions
+                            $sql = "SELECT * FROM matrice";
+                            $result = $mysqli->query($sql);
 
-                    // Message SQL de récupération des données des échanges associées à leurs interactions
-                    $sql = "SELECT * FROM matrice";
-                    $result = $mysqli->query($sql);
+                            # Si il y a des donées
+                            if ($result->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<option value=" . $row["id_mat"] . " id='" . $row["id_mat"] . "' label=" . $row["label_mat"] . "  >" . $row["label_mat"] . "</option>";
+                                }
+                            }
 
-                    # Si il y a des donées
-                    if ($result->num_rows > 0) {
-                        while($row = $result->fetch_assoc()) {
-                            echo "<option value=" . $row["id_mat"] . " id='" . $row["id_mat"] . "' label=" . $row["label_mat"] . "  >" . $row["label_mat"] . "</option>";
-                        }
-                    }
+                        ?>
 
-                ?>
+                    </select>
+                    <br/>
+                    <br/>
+                    <label for="newaudio" class="matrixlabel">Importer un fichier Audio (optionnel) :</label>
+                    <input id="newaudio" name="newaudio" type="file" accept=".mp3,.m4a" class="matriximport" />
+                    <br/>
+                    <br/>
+                    <button type="submit" class="matrixsubmit" >Ouvrir</button>
+                </form>
+            </div>
+            <div class="matrixForm">
+                <form action="matrix.php" method="POST">
+                    <h3>Créer une nouvelle matrice :</h3>
+                    <label for="newmatrix">Nom de la nouvelle Matrice :</label>
+                    <input placeholder="Nouvelle Matrice" id="newMatrix" name="newmatrix" required/> 
+                    <br/>
+                    <br/>
+                    <button type="submit" class="matrixsubmit" >Créer</button>
 
-            </select>
-            <br/>
-            <br/>
-            <label for="newaudio">Importer un fichier Audio (optionnel) :</label>
-            <input id="newaudio" name="newaudio" type="file" accept=".mp3,.m4a"/>
-            <br/>
-            <br/>
-            <button type="submit">Ouvrir</button>
-        </form>
+                </form>
+            </div>
+            <div class="matrixForm">
+                <form action="matrix.php" method="POST" enctype="multipart/form-data">
+                    <h3>Importer une matrice :</h3>
+                    <label for="importedmatrix" class="matrixlabel">Nouvelle Matrice :</label>
+                    <input type=file accept=".sql" name="importedmatrix" id="importedmatrix" class="matriximport" required/>
+                    <br/>
+                    <br/>
+                    <button type=submit class="matrixsubmit" >Importer</button> 
+
+                </form>
+            </div>
+        </div>
     </div>
-    <hr/>
-    <div>
-        <form action="matrix.php" method="POST">
-            <h4>Créer une nouvelle matrice :</h4>
-            <label for="newmatrix">Nom de la nouvelle Matrice :</label>
-            <input placeholder="Nouvelle Matrice" id="newMatrix" name="newmatrix" required/> 
-            <br/>
-            <br/>
-            <button type="submit">Créer</button>
 
-        </form>
-    </div>
-    <hr/>
-    <div>
-        <form action="matrix.php" method="POST" enctype="multipart/form-data">
-            <h4>Importer une matrice :</h4>
-            <label for="importedmatrix">Nouvelle Matrice :</label>
-            <input type=file accept=".sql" name="importedmatrix" id="importedmatrix" required/>
-            <br/>
-            <br/>
-            <button type=submit>Importer</button> 
-
-        </form>
-    </div>
 
 
 </body>
