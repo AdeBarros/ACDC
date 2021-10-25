@@ -287,9 +287,8 @@
             document.getElementById(div.getAttribute("forc")).click();
         }
 
-        if(div.getAttribute("deci") == ""){
-            document.getElementById("accord").click();
-            document.getElementById("accord").click();
+        if(div.getAttribute("deci") == "sans"){
+            uncheckDecision();
         }
         else if(document.getElementById(div.getAttribute("deci")).checked == false){
             document.getElementById(div.getAttribute("deci")).click();
