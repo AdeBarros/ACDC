@@ -13,10 +13,12 @@
     if(!empty($_POST['id_ech'])){
 
         $newTimeStamp = $_POST["newTS"];
+        $newAI = $_POST["newAI"];
 
         // On supprime l'échange dans la BDD
         $sql = "UPDATE `echange`  
-        SET `temp_ech` = '$newTimeStamp'
+        SET `temp_ech` = '$newTimeStamp',
+        `agent_init` = $newAI
         WHERE id_ech = ". $_POST['id_ech'];
         if(mysqli_query($link, $sql)){
             echo "Records added successfully.";
