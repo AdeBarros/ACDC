@@ -269,30 +269,73 @@ def datavis():
                     )
                 )
             # cas des interactions
-            else:      
-                # on donne sa position
-                if ech_dict["agini"] == "2":
-                    yinter = int(int_dict["temp"]) - 0.5
-                else:
-                    yinter = 8.5 - int(int_dict["temp"])   
+            else:
 
-                # Ajout d'une interaction
-                fig.add_layout_image(
-                dict(
-                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
-                    xref="x",
-                    yref="y",
-                    xanchor='center',
-                    yanchor='middle',
-                    x=temp,
-                    y=yinter,
-                    sizex=0.6,
-                    sizey=0.6,
-                    sizing="contain",
-                    opacity=1,
-                    layer="above",
+                # cas de la superposition
+                if j+1 < len(ech_dict)-7 and ech_dict[str(j+1)]["type"] != "coupure":
+                    # Ajout de la 1e interaction
+                    fig.add_layout_image(
+                    dict(
+                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                        xref="x",
+                        yref="y",
+                        xanchor='center',
+                        yanchor='middle',
+                        x=temp,
+                        y=yinter+0.75,
+                        sizex=0.6,
+                        sizey=0.6,
+                        sizing="contain",
+                        opacity=1,
+                        layer="above",
+                        )
                     )
-                )
+
+                    j += 1
+                    int_dict = ech_dict[str(j)]
+
+                    # Ajout de la 2e interaction
+                    fig.add_layout_image(
+                    dict(
+                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                        xref="x",
+                        yref="y",
+                        xanchor='center',
+                        yanchor='middle',
+                        x=temp,
+                        y=yinter+0.25,
+                        sizex=0.6,
+                        sizey=0.6,
+                        sizing="contain",
+                        opacity=1,
+                        layer="above",
+                        )
+                    )
+
+                else:
+                    # on donne sa position
+                    if ech_dict["agini"] == "2":
+                        yinter = int(int_dict["temp"]) - 0.5
+                    else:
+                        yinter = 8.5 - int(int_dict["temp"])   
+
+                    # Ajout d'une interaction
+                    fig.add_layout_image(
+                    dict(
+                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                        xref="x",
+                        yref="y",
+                        xanchor='center',
+                        yanchor='middle',
+                        x=temp,
+                        y=yinter,
+                        sizex=0.6,
+                        sizey=0.6,
+                        sizing="contain",
+                        opacity=1,
+                        layer="above",
+                        )
+                    )
             
             j += 1
 
