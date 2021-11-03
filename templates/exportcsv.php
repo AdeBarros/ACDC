@@ -59,18 +59,22 @@
 
         // Pour chaque échange
         
-        $sql = "SELECT * FROM matrice 
+        $sql = "SELECT echange.id_ech, temp_ech, agent_init, diff_init, `long`, force_ech, decision, id_evt, desc_evt FROM matrice 
         LEFT JOIN echange ON matrice.id_mat = echange.id_mat
+        LEFT JOIN evenement ON echange.id_ech = evenement.id_ech
         WHERE matrice.id_mat = " . $_POST["id"] . " ORDER BY temp_ech ;";
 
+        echo $sql;
+
         $result = $link->query($sql);     
+
+        $numEvt = 1; // Nombre d'évènements
 
         // Si la matrice est non nulle
         if ($result->num_rows > 0) {
         
             // Pour chaque échange
             while($row = $result->fetch_assoc()) {
-
                 
                 echo implode(',',$row);
 
@@ -85,9 +89,17 @@
                         $row["long"],
                         $row["force_ech"],
                         $row["decision"],
-                        "",
-                        "",
                     );
+
+                    if($row["id_evt"] != null){
+                        array_push($line, $numEvt);
+                        array_push($line, $row["desc_evt"]);
+                        $numEvt += 1;
+                    }
+                    else{
+                        array_push($line, "");
+                        array_push($line, "");
+                    }
                     
                     $id = $row["id_ech"];
                     $i = 1;

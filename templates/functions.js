@@ -465,7 +465,7 @@
         ctx.lineWidth= 0.5;
         ctx.stroke();
 
-        copyTimeStamp()
+        // copyTimeStamp()
     }
 
     function changeMode(){
