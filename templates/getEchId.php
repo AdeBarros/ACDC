@@ -20,7 +20,7 @@
     # Si il y a des donées
     if ($result->num_rows > 0) {
       // Ecriture d'une case pour ajouter un nouvel échange
-      echo "<div id='EchSavesPlus' class='echsaves' type='button' onclick='location.reload()'><label for='EchSavesPlus' data-toggle='tooltip' data-placement='bottom' title='Ajouter un échange' ><img class='plus' id='plus' src='Images/plus.png' /></label>";
+      echo "<div id='EchSavesPlus' class='echsaves' type='button' onclick='location.reload()'><label for='EchSavesPlus' data-toggle='tooltip' data-placement='bottom' title='Ajouter un échange' ><img class='plus' id='plus' src='Images/plus.png' /></label></div>";
       while($row = $result->fetch_assoc()) {
 
         # Récupération des échanges
@@ -28,9 +28,8 @@
 
           $i = $row['id_ech'];
           // Ecriture d'une case pour chaque échange
-          echo "</div>";
           echo "<div type='button' class='echsaves' id='EchSaves" . $i . "' tem='" . $row['temp_ech'] . "' agini = '" . $row['agent_init'] . "' dini = '" . $row['diff_init'] . "' long='" . $row['long'] . "' forc='" . $row['force_ech'] . "' deci='" . $row['decision'] . "' onclick='importDataEch(this)'>";
-          echo $row["temp_ech"];
+          echo "<a>" . $row["temp_ech"] . "</a>";
           
 
           # Récupération des échanges
@@ -91,9 +90,9 @@
             echo "<a>Event<a/>";
             echo "</div>";
           }
+
+          echo "</div>";
         }
       }
-      
-      echo "</div>";
     }
 ?>

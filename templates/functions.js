@@ -268,6 +268,8 @@
         }
         */
 
+        alert(div.childElementCount);
+
         // the soft way
         if(document.getElementById("participant" + div.getAttribute("agini")).checked == false){
             document.getElementById("participant" + div.getAttribute("agini")).click();
@@ -283,7 +285,7 @@
         document.getElementById("Longueur").value = div.getAttribute("long");
         refresh();
 
-        if(div.getAttribute("forc") == null || div.getAttribute("forc") == ""){
+        if(div.getAttribute("forc") == ""){
             uncheckForce();
         }
         else{
@@ -308,15 +310,13 @@
         while(div.childElementCount >= i){
             var child = div.childNodes[i];
             if(child.id.slice(0, 5) == "Inter"){
-                document.getElementById("Zone" + div.childNodes[i].getAttribute("tem")).appendChild(document.getElementById(child.getAttribute("typ")).cloneNode(true));
+                document.getElementById("Zone" + child.getAttribute("tem")).appendChild(document.getElementById(child.getAttribute("typ")).cloneNode(true));
             }
             if(child.id.slice(0, 5) == "Event"){
                 document.getElementById("evenement").value = child.getAttribute("desc");
             }
             i += 1;
-        }
-
-        
+        }        
     }
     
     // Met à jour la Datavis avec le code Python (! lancer Flask avant)
@@ -340,7 +340,7 @@
 
         while(i < numEch){
             echange = dataset.children[i+1];
-            numInter = echange.childElementCount - 2;
+            numInter = echange.childElementCount - 3;
             j = 0;
             echData = {};
             echData["temp"] = echange.getAttribute("tem");
@@ -352,8 +352,8 @@
             echData["evt"] = null;
 
             while(j < numInter){
-                interaction = echange.children[j];
-                if(interaction.getAttribute("id").slice(0, 5) == "Inter"){
+                interaction = echange.children[j+1];
+                if(interaction.getAttribute("id") != null && interaction.getAttribute("id").slice(0, 5) == "Inter"){
                     interData = {}
                     interData["temp"] = interaction.getAttribute("tem");
                     interData["type"] = interaction.getAttribute("typ");
@@ -361,7 +361,7 @@
                     echData[stringJ] = interData;
 
                 }
-                else if(interaction.getAttribute("id").slice(0, 5) == "Event"){
+                else if(interaction.getAttribute("id") != null && interaction.getAttribute("id").slice(0, 5) == "Event"){
                     echData["evt"] = interaction.getAttribute("desc");
                 }
                 j++;
