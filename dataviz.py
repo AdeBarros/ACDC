@@ -6,6 +6,7 @@ Created on Tue Jun  1 14:57:43 2021
 """
 
 import plotly.graph_objects as go
+from plotly.graph_objs import layout
 from plotly.subplots import make_subplots
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
@@ -132,7 +133,7 @@ def datavis():
         width = widthmin + widthsec/60  
         
     """
-    width = 9.8 # !!! A supprimer lors de la suppression de la somution temp
+    width = 9.8 # !!! A supprimer lors de la suppression de la solution temp
     
     # ajout des bandes grises
     addSpans(fig, width + 0.2)
@@ -142,7 +143,7 @@ def datavis():
             tickangle = 10,
             title_text = "Durée en minutes",
             title_font = {"size": 20},
-            title_standoff = 10,
+            title_standoff = 5,
             #nticks=5,
             #tick0=2.5, 
             #dtick=1,
@@ -153,7 +154,7 @@ def datavis():
             tickangle = 0,
             title_text = "Longueur de l'échange",
             title_font = {"size": 20},
-            title_standoff = 10,
+            title_standoff = 5,
             #nticks=5,
             #tick0=2.5, 
             #dtick=1,
@@ -163,7 +164,6 @@ def datavis():
 
     #Ajout des légendes P1 et P2
     fig.add_annotation(dict(font=dict(color="black",size=14),
-                            #x=x_loc,
                             x=0,
                             y=1.09,
                             showarrow=False,
@@ -174,7 +174,6 @@ def datavis():
                            ))
 
     fig.add_annotation(dict(font=dict(color="black",size=14),
-                            #x=x_loc,
                             x=0,
                             y=-0.09,
                             showarrow=False,
@@ -203,10 +202,8 @@ def datavis():
                     source="http://localhost/ACDC/templates/Images/{}.png".format("Evenement"),
                     xref="x",
                     yref="paper",
-                    xanchor='center',
-                    yanchor='middle',
                     x=temp,
-                    y=-0.05,
+                    y=-0.01,
                     sizex=0.13,
                     sizey=0.66,
                     sizing="contain",
