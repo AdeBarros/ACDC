@@ -70,19 +70,26 @@
           echo "<form onSubmit='event.preventDefault(); changeTS(this);' action='modify.php' method='POST'><input name='id_ech' value='$i' type='hidden'/><input id='newts' name='newTS' value='". $row['temp_ech'] ."' type='hidden'/><input id='newAI' name='newAI' value='". $row['agent_init'] ."' type='hidden'/><input type='image' src='Images/pen.png' class='modify'/></input></form>";
           echo "</div>";
           
+          if(!empty($row["force_ech"])){
+            if($row['agent_init'] == 1){
+              echo "<div class='echimgboxes'>";
+              echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
+              echo "<img src='Images/" . $row['decision'] . ".png' class='imgprev'/>";
+              echo "</div>";
+            }
+            else{
+              echo "<div class='echimgboxes'>";
+              echo "<img src='Images/" . $row['decision'] . "flip.png' class='imgprev'/>";
+              echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
+              echo "</div>";
 
-          if($row['agent_init'] == 1){
-            echo "<div class='echimgboxes'>";
-            echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
-            echo "<img src='Images/" . $row['decision'] . ".png' class='imgprev'/>";
-            echo "</div>";
+            }
           }
           else{
             echo "<div class='echimgboxes'>";
-            echo "<img src='Images/" . $row['decision'] . "flip.png' class='imgprev'/>";
-            echo "<img src='Images/" . $row['force_ech'] . ".png' class='imgprev'/>";
+            echo "<img src='Images/Evenement.png' class='imgprev'/>";
+            echo "<a>Event<a/>";
             echo "</div>";
-
           }
         }
       }

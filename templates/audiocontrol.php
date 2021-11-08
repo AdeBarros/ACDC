@@ -16,6 +16,8 @@
         if($link === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
         }
+        
+        $_SESSION["audio"] = false;
 
         $sql = "SELECT audio_name FROM matrice WHERE id_mat = " . $_SESSION["matrice_id"]. ";";
         
@@ -30,6 +32,8 @@
                     echo    "<source src='" . $pathtoaudio . "' type='audio/mpeg'>";
                     echo    "Your browser does not support the audio element.";
                     echo '</audio>';
+
+                    $_SESSION["audio"] = true;
                 }
             }
         }

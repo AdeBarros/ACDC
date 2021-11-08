@@ -168,8 +168,12 @@
                         <button class="sav" type="Submit" onclick="testPrevis();">Exporter en CSV</button>
                     </form>
                     <br/>
-                    <button id="changemode" class="cancel" type="Submit" onclick="changeMode();" >Mode Suivi</button>
-                    <br/>
+                    <?php
+                        if(isset($_SESSION['audio']) && $_SESSION['audio'] == true){
+                            echo '<button id="changemode" class="cancel" type="Submit" onclick="changeMode();" >Mode Suivi</button>';
+                            echo '<br/>';
+                        }
+                    ?>
                     <button id="copytimestamp" class="cancel" type="Submit" onclick="copyTimeStamp();" >Copier le timestamp</button>
                     <br/>
                     <button type="reset" style="border-color: #2C394B ; background-color: #2C394B ; color: white" class="cancel"  onclick="datavisRefresh()">Raffraichir Datavis</button>

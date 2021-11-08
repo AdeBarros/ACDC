@@ -161,184 +161,190 @@ def datavis():
             range=[-1, 9]
     )
     
-    # Remplissage de la datavis
-    # On commence par les échanges
+    # Remplissage de la datavis    
     for i in range(len(dict_x_new)):
         istring = str(i)
         ech_dict = dict_x_new[istring]
-        
-        if ech_dict["agini"] == "2":
-            ydeci = int(ech_dict["long"]) + 0.33
-        else:
-            ydeci = 7.66 - int(ech_dict["long"])
-        
-        sptemp = ech_dict["temp"].split(":")
-        minutes = int(sptemp[0])
-        sec = int(sptemp[1])
-        temp = minutes + sec/60
-        
-        if(ech_dict["deci"]):
-            # Ajout de la Décision
-            fig.add_layout_image(
-                dict(
-                    source="http://localhost/ACDC/templates/Images/{}{}.png".format(ech_dict["deci"], decFlip(ech_dict["agini"])),
-                    xref="x",
-                    yref="y",
-                    xanchor='center',
-                    yanchor='middle',
-                    x=temp,
-                    y=ydeci,
-                    sizex=0.7,
-                    sizey=0.7,
-                    sizing="contain",
-                    opacity=1,
-                    layer="above"
-                    )
-                )
-        
-        # Ajout de la Force
-        for l in range(int(ech_dict["long"])+1):
-            fig.add_layout_image(
-            dict(
-                source="http://localhost/ACDC/templates/Images/{}.png".format(ech_dict["force"]),
-                xref="x",
-                yref="y",
-                xanchor='center',
-                yanchor='middle',
-                x=temp,
-                y=forcPos(l, ech_dict["agini"]),
-                sizex=0.22,
-                sizey=1,
-                sizing="contain",
-                opacity=1,
-                layer="below"
-                )
-            )
-        # Test
-        # addLine(fig, temp, agent, temp, abs(int(ech_dict["long"])-abs(agent)+1), "black")
-        
 
-        # Ajout de l'évènement
-        if(ech_dict["evt"] != None):
-            fig.add_layout_image(
-            dict(
-                source="http://localhost/ACDC/templates/Images/{}.png".format("Evenement"),
-                xref="x",
-                yref="paper",
-                xanchor='center',
-                yanchor='middle',
-                x=temp,
-                y=-0.05,
-                sizex=0.13,
-                sizey=0.66,
-                sizing="contain",
-                opacity=1,
-                layer="below"
-                )
-            )
+        if ech_dict["temp"] != None:
         
+            sptemp = ech_dict["temp"].split(":")
+            minutes = int(sptemp[0])
+            sec = int(sptemp[1])
+            temp = minutes + sec/60
 
-        # Puis on s'attaque à leurs interactions
-        j=0        
-        while(j < len(ech_dict)-7):
-            int_dict = ech_dict[str(j)]
-
-            # cas de la coupure
-            if int_dict["type"] == "coupure":
-                # on donne sa position
-                if ech_dict["agini"] == "2":
-                    yinter = int(int_dict["temp"])
-                else:
-                    yinter = 8 - int(int_dict["temp"])
-                
-                # Ajout de la coupure
+            # Ajout de l'évènement
+            if(ech_dict["evt"] != None):
                 fig.add_layout_image(
                 dict(
-                    source="http://localhost/ACDC/templates/Images/{}.png".format("coupure"),
+                    source="http://localhost/ACDC/templates/Images/{}.png".format("Evenement"),
                     xref="x",
-                    yref="y",
+                    yref="paper",
                     xanchor='center',
                     yanchor='middle',
                     x=temp,
-                    y=yinter,
-                    sizex=0.6,
-                    sizey=0.6,
+                    y=-0.05,
+                    sizex=0.13,
+                    sizey=0.66,
                     sizing="contain",
                     opacity=1,
-                    layer="above",
+                    layer="below"
                     )
                 )
-            # cas des interactions
-            else:
-
-                # cas de la superposition
-                if j+1 < len(ech_dict)-7 and ech_dict[str(j+1)]["type"] != "coupure":
-                    # Ajout de la 1e interaction
+            
+            if(ech_dict["force"] != "" and ech_dict["force"] != None):
+                
+            
+                if ech_dict["agini"] == "2":
+                    ydeci = int(ech_dict["long"]) + 0.33
+                else:
+                    ydeci = 7.66 - int(ech_dict["long"])
+            
+                if(ech_dict["deci"]):
+                    # Ajout de la Décision
+                    fig.add_layout_image(
+                        dict(
+                            source="http://localhost/ACDC/templates/Images/{}{}.png".format(ech_dict["deci"], decFlip(ech_dict["agini"])),
+                            xref="x",
+                            yref="y",
+                            xanchor='center',
+                            yanchor='middle',
+                            x=temp,
+                            y=ydeci,
+                            sizex=0.7,
+                            sizey=0.7,
+                            sizing="contain",
+                            opacity=1,
+                            layer="above"
+                            )
+                        )
+                
+                # Ajout de la Force
+                for l in range(int(ech_dict["long"])+1):
                     fig.add_layout_image(
                     dict(
-                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                        source="http://localhost/ACDC/templates/Images/{}.png".format(ech_dict["force"]),
                         xref="x",
                         yref="y",
                         xanchor='center',
                         yanchor='middle',
                         x=temp,
-                        y=yinter+0.75,
-                        sizex=0.6,
-                        sizey=0.6,
+                        y=forcPos(l, ech_dict["agini"]),
+                        sizex=0.22,
+                        sizey=1,
                         sizing="contain",
                         opacity=1,
-                        layer="above",
+                        layer="below"
                         )
                     )
+                # Test
+                # addLine(fig, temp, agent, temp, abs(int(ech_dict["long"])-abs(agent)+1), "black")
+                        
 
-                    j += 1
+                # Puis on s'attaque à leurs interactions
+                j=0        
+                while(j < len(ech_dict)-7):
                     int_dict = ech_dict[str(j)]
 
-                    # Ajout de la 2e interaction
-                    fig.add_layout_image(
-                    dict(
-                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
-                        xref="x",
-                        yref="y",
-                        xanchor='center',
-                        yanchor='middle',
-                        x=temp,
-                        y=yinter+0.25,
-                        sizex=0.6,
-                        sizey=0.6,
-                        sizing="contain",
-                        opacity=1,
-                        layer="above",
+                    # cas de la coupure
+                    if int_dict["type"] == "coupure":
+                        # on donne sa position
+                        if ech_dict["agini"] == "2":
+                            yinter = int(int_dict["temp"])
+                        else:
+                            yinter = 8 - int(int_dict["temp"])
+                        
+                        # Ajout de la coupure
+                        fig.add_layout_image(
+                        dict(
+                            source="http://localhost/ACDC/templates/Images/{}.png".format("coupure"),
+                            xref="x",
+                            yref="y",
+                            xanchor='center',
+                            yanchor='middle',
+                            x=temp,
+                            y=yinter,
+                            sizex=0.6,
+                            sizey=0.6,
+                            sizing="contain",
+                            opacity=1,
+                            layer="above",
+                            )
                         )
-                    )
-
-                else:
-                    # on donne sa position
-                    if ech_dict["agini"] == "2":
-                        yinter = int(int_dict["temp"]) - 0.5
+                    # cas des interactions
                     else:
-                        yinter = 8.5 - int(int_dict["temp"])   
 
-                    # Ajout d'une interaction
-                    fig.add_layout_image(
-                    dict(
-                        source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
-                        xref="x",
-                        yref="y",
-                        xanchor='center',
-                        yanchor='middle',
-                        x=temp,
-                        y=yinter,
-                        sizex=0.6,
-                        sizey=0.6,
-                        sizing="contain",
-                        opacity=1,
-                        layer="above",
-                        )
-                    )
-            
-            j += 1
+                        # on donne sa position
+                        if ech_dict["agini"] == "2":
+                            yinter = int(int_dict["temp"]) - 0.5
+                        else:
+                            yinter = 8.5 - int(int_dict["temp"])  
+
+                        
+                        # cas de la superposition
+                        if j+1 < len(ech_dict)-7 and ech_dict[str(j+1)]["temp"] == int_dict["temp"] and ech_dict[str(j+1)]["type"] != "coupure":
+                            # Ajout de la 1e interaction
+                            fig.add_layout_image(
+                            dict(
+                                source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                                xref="x",
+                                yref="y",
+                                xanchor='center',
+                                yanchor='middle',
+                                x=temp,
+                                y=yinter+0.20,
+                                sizex=0.6,
+                                sizey=0.6,
+                                sizing="contain",
+                                opacity=1,
+                                layer="above",
+                                )
+                            )
+
+                            j += 1
+                            int_dict = ech_dict[str(j)]
+
+                            # Ajout de la 2e interaction
+                            fig.add_layout_image(
+                            dict(
+                                source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                                xref="x",
+                                yref="y",
+                                xanchor='center',
+                                yanchor='middle',
+                                x=temp,
+                                y=yinter-0.20,
+                                sizex=0.6,
+                                sizey=0.6,
+                                sizing="contain",
+                                opacity=1,
+                                layer="above",
+                                )
+                            )
+
+                        else:
+                            # Ajout d'une interaction
+                            fig.add_layout_image(
+                            dict(
+                                source="http://localhost/ACDC/templates/Images/{}{}.png".format(int_dict["type"], imgFlip(ech_dict["agini"],int(int_dict["temp"]),ech_dict["dini"])),
+                                xref="x",
+                                yref="y",
+                                xanchor='center',
+                                yanchor='middle',
+                                x=temp,
+                                y=yinter,
+                                sizex=0.6,
+                                sizey=0.6,
+                                sizing="contain",
+                                opacity=1,
+                                layer="above",
+                                )
+                            )
+                    
+                    j += 1
 
     # On écrit la datavis dans un fichier HTML qu'on reprend dans l'interface
     fig.write_html("newdatavis.html")
     return ""
+
+    

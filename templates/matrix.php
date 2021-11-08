@@ -35,9 +35,9 @@
         if(!empty($_FILES["importedmatrix"])){
 
             // Cas du SQL
-            if($_FILES["importedmastrix"]["type"] == "sql"){
+            if(pathinfo($_FILES["importedmatrix"]["name"], PATHINFO_EXTENSION) == "sql"){
                 $sql = file_get_contents($_FILES["importedmatrix"]["tmp_name"]);
-    
+
                 if ($link->query($sql) === TRUE) {
                     echo "New record created successfully";
                   } else {

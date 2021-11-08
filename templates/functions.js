@@ -282,8 +282,14 @@
 
         document.getElementById("Longueur").value = div.getAttribute("long");
         refresh();
-        if(document.getElementById(div.getAttribute("forc")).checked == false){
-            document.getElementById(div.getAttribute("forc")).click();
+
+        if(div.getAttribute("forc") == null || div.getAttribute("forc") == ""){
+            uncheckForce();
+        }
+        else{
+            if(document.getElementById(div.getAttribute("forc")).checked == false){
+                document.getElementById(div.getAttribute("forc")).click();
+            }
         }
 
         if(div.getAttribute("deci") == "sans"){
@@ -496,7 +502,8 @@
         var nonverbal = document.getElementById("nonverbal");
         var soliloque = document.getElementById("soliloque");
         var commentaire = document.getElementById("commentaire");
-        if(ordre.checked || instruction.checked || proposition.checked || nonverbal.checked || soliloque.checked || commentaire.checked){
+        var evenement = document.getElementById("evenement");
+        if(ordre.checked || instruction.checked || proposition.checked || nonverbal.checked || soliloque.checked || commentaire.checked || (evenement.value != "" && evenement.value != null)){
             insertPrevis();
             form.submit();
         }
