@@ -268,8 +268,6 @@
         }
         */
 
-        alert(div.childElementCount);
-
         // the soft way
         if(document.getElementById("participant" + div.getAttribute("agini")).checked == false){
             document.getElementById("participant" + div.getAttribute("agini")).click();

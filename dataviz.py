@@ -160,6 +160,29 @@ def datavis():
             tickvals=[0, 1, 2, 3, 4, 5, 6, 7, 8],
             range=[-1, 9]
     )
+
+    #Ajout des légendes P1 et P2
+    fig.add_annotation(dict(font=dict(color="black",size=14),
+                            #x=x_loc,
+                            x=0,
+                            y=1.09,
+                            showarrow=False,
+                            text='<b>P1</b>',
+                            textangle=0,
+                            xref="x",
+                            yref="paper"
+                           ))
+
+    fig.add_annotation(dict(font=dict(color="black",size=14),
+                            #x=x_loc,
+                            x=0,
+                            y=-0.09,
+                            showarrow=False,
+                            text='<b>P2</b>',
+                            textangle=0,
+                            xref="x",
+                            yref="paper"
+                           ))
     
     # Remplissage de la datavis    
     for i in range(len(dict_x_new)):
