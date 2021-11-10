@@ -100,8 +100,8 @@
                             <div id="Zone0" class="zone" ondrop="drop(event)" ondragover="allowDrop(event)" ondblclick="supprChild(this)">0</div>
                         </div>
                         <div id="PrevisOptions" class="options">
-                            <input type="button" value="+" onclick="addtolength(1); refresh()"></input>
-                            <input type="button" value="-" onclick="addtolength(-1); refresh()"></input>
+                            <input type="button" value="-" class="longbtn" onclick="addtolength(-1); refresh()"></input>
+                            <input type="button" value="+" class="longbtn" onclick="addtolength(1); refresh()"></input>
                         </div>
                     </div>
 

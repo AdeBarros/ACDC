@@ -341,7 +341,13 @@ html{
     color: 2A2727;
 }
 
-
+.longbtn{
+    margin-top: 1vh;
+    margin-left: 10ch;
+    width: 7ch;
+    height: 5vh;
+    border: 3px solid grey;
+}
 
 
 
