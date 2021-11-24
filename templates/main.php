@@ -158,7 +158,9 @@
             <div id="BottomDiv" class="bottom">
                 <div id="VisDiv" class="vis">
                     <canvas id="canvas" class="canvas" onclick="setAudioFromPointer(event)"></canvas> 
-                    <?php include "../newdatavis.html"; ?>
+                    <div class="dataviz">
+                        <?php include "../newdatavis.html"; ?>
+                    </div>
                     <?php include "audiocontrol.php"; ?>
                     <!--<a id="demo">Demo</a>-->
                 </div>

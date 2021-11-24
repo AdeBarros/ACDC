@@ -7,7 +7,7 @@
 
 .close{
     background-color: red;
-    width: 4ch;
+    width: 3vh;
     height: 3vh;
     float: right;
     -ms-flex-align: end;
@@ -142,6 +142,12 @@ p{
     text-align-last: center;
 }
 
+a{
+    margin-left: 0.5%;
+    font-size: 1.6vh;
+    text-align-last: center;
+}
+
 .imglabel{
     margin-left: 5.1%;
     margin-right: 5%;
@@ -222,7 +228,7 @@ p{
 
 .imgprev{
     height: 4vh;
-    width: 5ch;
+    width: 5vh;
     object-fit: contain;
     background-color: #e9e9e9;
     float: right;
@@ -232,31 +238,31 @@ p{
 
 .echplusboxes{
     float:right;
-    top: -20px;
+    top: -1vh;
 }
 
 .delete{
     background-color: red;
-    width: 2.5ch;
+    width: 80%;
     height: 2vh;
     top: 0px;
     float:right;
     text-align-last: center;
-    border: 0.3ch solid grey;
+    border: 0.3vh solid grey;
 }
 
 .modify{
     background-color: orange;
-    width: 2.5ch;
+    width: 80%;
     height: 2vh;
     float:right;
     text-align-last: center;
-    border: 0.3ch solid grey;
+    border: 0.3vh solid grey;
 }
 
 .echsaves{
     width: 80%;
-    height: 12vh;
+    height: 13vh;
     background-color: #e9e9e9;
     border: 2px solid #453f3d;
     cursor: pointer;
@@ -286,17 +292,23 @@ p{
 }
 
 .echimgboxes{
-    float:left;
-    width: 5ch;
-    margin-left: 5ch;
+    width: 25%;
+    height: 8vh;
+    margin-top: 1vh;
+    margin-left: 30%;
 }
 
 .textinputs{
-    width: 8%;
+    width: 7%;
 }
 
 input[type="checkbox"] { 
     display: none; 
+}
+
+.dataviz{
+    width:100%;
+    height: 47.7vh;
 }
 
 /* Pour audiocontrol.php */
@@ -321,19 +333,21 @@ html{
 
 .matrixForm{
     background-color: #453f3d;
-    border: 1ch solid #333;;
-    height: 20vh;
+    border: 1vh solid #333;;
+    height: 22vh;
     width: 28%;
     margin-left: 2%;
     padding-bottom: 1%;
     padding-left: 1%;
     display: inline-flex;
-    color: white
+    color: white;
+    font-size: 1.7vh;
+    
 }
 
 .matrixsubmit{
     bottom: 0;
-    width: 68ch;
+    width: 50vh;
     height: 4.5vh;
     background-color: white;
     border: 1px solid #333;
@@ -343,8 +357,8 @@ html{
 
 .longbtn{
     margin-top: 1vh;
-    margin-left: 10ch;
-    width: 7ch;
+    margin-left: 22%;
+    width: 5vh;
     height: 5vh;
     border: 3px solid grey;
 }
@@ -443,6 +457,10 @@ label a {
     z-index: -1;
 }
 
+button{
+    font-size:1.5vh;
+}
+
 .tooltip{
     position:absolute;
     z-index:1070;
@@ -462,7 +480,7 @@ label a {
     word-spacing:normal;
     word-wrap:normal;
     white-space:normal;
-    font-size:12px;
+    font-size:1.5vh;
 }
     
 .tooltip.in{
