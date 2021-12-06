@@ -170,6 +170,8 @@ Depuis cette page, vous pourrez :
 * Créer une nouvelle matrice
 * Importer une matrice au format sql
 
+Vous pouvez ensuite Ajouter des fichiers audios dans le dossier `./templates/Audios` et les importer au moment du chargement d'une matrice.
+
 
 ### Références
 
