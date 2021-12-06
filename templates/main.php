@@ -62,12 +62,14 @@
                             <input type="checkbox" id="commentaire" name="commentaire" class="button" onclick="uncheckForce(this)" />
                             <label for="commentaire"  data-toggle="tooltip" data-placement="bottom" title="Commentaire : tout type de syntaxe non directive ni réponse, commentaire sur le jeu ou un sujet annexe" ><img src="Images/commentaire.png" /></label>
                             <br/>
-                            <a class="imglabel">Ordre</a>
-                            <a class="imglabel">Instr</a>
-                            <a class="imglabel">Propo</a>
-                            <a class="imglabel">NVerb</a>
-                            <a class="imglabel">Solli</a>
-                            <a class="imglabel">Comm</a>
+                            <div class="labdiv">
+                                <a class="imglabel">Ordre</a>
+                                <a class="imglabel">Instr</a>
+                                <a class="imglabel">Propo</a>
+                                <a class="imglabel">NVerb</a>
+                                <a class="imglabel">Solli</a>
+                                <a class="imglabel">Comm</a>
+                            </div> 
                         </div>
                         <div id="DecisionDiv" class="decision">
                             <div id="LabelDecision" class="lab">
@@ -85,12 +87,14 @@
                             <label for="concession" data-toggle="tooltip" data-placement="bottom" title="Concession : n'est pas d'accord mais accepte tout de même d'effectuer l'action" ><img src="Images/concession.png"/></label>
                             <input type="checkbox" id="indetermine" name="indetermine" class="button" onclick="uncheckDecision(this)" />
                             <label for="indetermine" data-toggle="tooltip" data-placement="bottom" title="Indéterminée : réponse machinale/automatique, inaudible ou trop difficile à interpréter" ><img src="Images/indetermine.png"/></label>     
-                            <a class="imglabel">Accep</a>
-                            <a class="imglabel">Accor</a>
-                            <a class="imglabel">Autho</a>
-                            <a class="imglabel">Refus</a>
-                            <a class="imglabel">Conce</a>
-                            <a class="imglabel">Indet</a>               
+                            <div class="labdiv">
+                                <a class="imglabel">Accep</a>
+                                <a class="imglabel">Accor</a>
+                                <a class="imglabel">Autho</a>
+                                <a class="imglabel">Refus</a>
+                                <a class="imglabel">Conce</a>
+                                <a class="imglabel">Indet</a>     
+                            </div>    
                         </div>
 
                     </div>
@@ -124,25 +128,31 @@
                         <input type="checkbox" id="coupurecheck" class="button" />
                         <label for="coupurecheck" data-toggle="tooltip" data-placement="bottom" title="Coupure : un participant coupe la parole à un autre (à placer dans l'échange avant que la parole soit coupée)" ><img class="interimg" id="coupure" src="Images/coupure.png" draggable="true" ondragstart="drag(event)"/></label>
                         <br/>
-                        <a class="interlabel1">Q</a>
-                        <a class="interlabel1">I</a>
-                        <a class="interlabel1">C</a>
-                        <a class="interlabel1">Cp</a>  
+                        <div class="labdiv">
+                            <a class="interlabel1">Q</a>
+                            <a class="interlabel1">I</a>
+                            <a class="interlabel1">C</a>
+                            <a class="interlabel1">Cp</a>
+                        </div>  
                         <br/>
                         <br/>
-                        <input type="checkbox" id="positifcheck" class="button" />
-                        <label for="positif" data-toggle="tooltip" data-placement="bottom" title="Positif : compliment ou remarque positive sur le jeu ou une action" ><img class="interimg" id="positif" src="Images/positif.png" draggable="true" ondragstart="drag(event)"/></label>
-                        <input type="checkbox" id="negatifcheck" class="button" />
-                        <label for="negatif" data-toggle="tooltip" data-placement="bottom" title="Négatif : critique ou remarque négative sur le jeu ou une action" ><img class="interimg" id="negatif" src="Images/negatif.png" draggable="true" ondragstart="drag(event)"/></label>
-                        <input type="checkbox" id="positif2check" class="button" />
-                        <label for="positif2" data-toggle="tooltip" data-placement="bottom" title="Positif+ : compliment, remarque positive ou de satisfaction à son partenaire" ><img class="interimg" id="positif2" src="Images/positif2.png" draggable="true" ondragstart="drag(event)"/></label>
-                        <input type="checkbox" id="negatif2check" class="button" />
-                        <label for="negatif2" data-toggle="tooltip" data-placement="bottom" title="Négatif- : critique ou remarque négative envers son partenaire ou une action de celui-ci" ><img class="interimg" id="negatif2" src="Images/negatif2.png" draggable="true" ondragstart="drag(event)"/></label>
-                        <br/>
-                        <a class="interlabel2">RPT</a>
-                        <a class="interlabel2">RNT</a>
-                        <a class="interlabel2">RPP</a>
-                        <a class="interlabel2">RNP</a>  
+                        <div class="inter2">
+                            <input type="checkbox" id="positifcheck" class="button" />
+                            <label for="positif" data-toggle="tooltip" data-placement="bottom" title="Positif : compliment ou remarque positive sur le jeu ou une action" ><img class="interimg" id="positif" src="Images/positif.png" draggable="true" ondragstart="drag(event)"/></label>
+                            <input type="checkbox" id="negatifcheck" class="button" />
+                            <label for="negatif" data-toggle="tooltip" data-placement="bottom" title="Négatif : critique ou remarque négative sur le jeu ou une action" ><img class="interimg" id="negatif" src="Images/negatif.png" draggable="true" ondragstart="drag(event)"/></label>
+                            <input type="checkbox" id="positif2check" class="button" />
+                            <label for="positif2" data-toggle="tooltip" data-placement="bottom" title="Positif+ : compliment, remarque positive ou de satisfaction à son partenaire" ><img class="interimg" id="positif2" src="Images/positif2.png" draggable="true" ondragstart="drag(event)"/></label>
+                            <input type="checkbox" id="negatif2check" class="button" />
+                            <label for="negatif2" data-toggle="tooltip" data-placement="bottom" title="Négatif- : critique ou remarque négative envers son partenaire ou une action de celui-ci" ><img class="interimg" id="negatif2" src="Images/negatif2.png" draggable="true" ondragstart="drag(event)"/></label>
+                            <br/>
+                            <div class="labdiv">
+                                <a class="interlabel2">RPT</a>
+                                <a class="interlabel2">RNT</a>
+                                <a class="interlabel2">RPP</a>
+                                <a class="interlabel2">RNP</a>  
+                            </div>
+                        </div>
                         <div id="EvenentInteractions" class="labevt">
                             <p>Evenement :</p>
                         </div>

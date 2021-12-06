@@ -101,7 +101,12 @@ img{
 .interlabel2{
     font-size: 1.5vh;
     margin-left: 8%;
-    margin-right: 7.2%
+    margin-right: 7.2%;
+}
+
+.inter2{
+    margin-top: -3vh;
+    margin-bottom: 2vh;
 }
 
 .save{
@@ -151,7 +156,11 @@ a{
 .imglabel{
     margin-left: 5.1%;
     margin-right: 5%;
-    font-size: 1.5vh
+    font-size: 1.5vh;
+}
+
+.labdiv{
+    margin-top: -0.5vh;
 }
 
 
@@ -218,7 +227,7 @@ a{
 .evenement{
     width: 24%;
     height: 4vh;
-    margin-top: 7vh;
+    margin-top: 7.5vh;
     margin-left: 2.5%;
     overflow: scroll;
     vertical-align: top;
@@ -419,7 +428,7 @@ label {
 label img {
     height: 9vh;
     width: 13%;
-    transition-duration: 0.2s;
+    transition-duration: 0.01s;
     transform-origin: 50% 50%;
     margin: 0.8%;
     border-radius: 5px;
@@ -446,7 +455,7 @@ label a {
     padding-bottom: 2px;
     padding-left: 7px;
     padding-right: 7px;
-    transition-duration: 0.2s;
+    transition-duration: 0.01s;
     transform-origin: 50% 50%;
     background-color: #fff;
 }
